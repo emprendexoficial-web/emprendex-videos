@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Videos para redes · EmprendeX</title>
+<meta name="description" content="Descarga los videos de EmprendeX con voz y efectos, con su texto listo para publicar.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#050506">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23050506'/%3E%3Cpolygon points='14,14 39,14 50,39 61,14 86,14 61,50 86,86 61,86 50,61 39,86 14,86 39,50' fill='%23A3E635'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#050506;--ink-1:#0C0C0E;--ink-2:#141416;--ink-3:#1D1D20;--edge:#2E2E33;--edge-soft:#1F1F23;
+  --txt:#F6F4F0;--mut:#A9A49C;--dim:#77726B;--marca:#A3E635;--marca-2:#BEF264;--marca-ink:#1A2605;
+  --coral:#FF5D4E;--ambar:#F5B83D;
+  --display:'Outfit','Avenir Next','Segoe UI',Arial,sans-serif;--body:'Space Grotesk','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono',ui-monospace,'Courier New',monospace;
+  --r:14px;--r-lg:22px;--ease:cubic-bezier(.16,1,.3,1);--canal:16px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--txt);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;
+  background-image:radial-gradient(60% 40% at 85% 0%,rgba(163,230,53,.10),transparent 70%)}
+img,video{max-width:100%;display:block}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--marca-2);outline-offset:3px;border-radius:8px}
+.cont{max-width:680px;margin-inline:auto;padding:0 max(var(--canal),env(safe-area-inset-left,0px)) 0 max(var(--canal),env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
+h1{font-size:clamp(2rem,9vw,3rem)}
+h2{font-size:clamp(1.4rem,6vw,1.9rem)}
+h3{font-size:1.15rem}
+em{font-style:normal;color:var(--marca)}
+p{margin:0}
+.k{font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--marca)}
+.chica{font-size:.84rem;color:var(--dim)}
+.barra{position:sticky;top:0;z-index:20;background:rgba(5,5,6,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--edge-soft)}
+.barra .cont{display:flex;align-items:center;justify-content:space-between;gap:12px;height:52px}
+.logo{display:inline-flex;align-items:center;gap:4px;font-family:var(--display);font-weight:800;font-size:1.02rem}
+.logo i{display:block;width:26px;height:26px;background:linear-gradient(135deg,var(--marca) 0 50%,#4d8f1a 50%);clip-path:polygon(0 0,35% 0,50% 35%,65% 0,100% 0,65% 50%,100% 100%,65% 100%,50% 65%,35% 100%,0 100%,35% 50%)}
+.saltos{display:flex;gap:6px}
+.saltos a{font-family:var(--mono);font-size:.66rem;font-weight:700;text-decoration:none;color:var(--mut);border:1px solid var(--edge);border-radius:999px;padding:5px 9px}
+main{padding:22px 0 60px;display:grid;gap:26px}
+.intro{display:grid;gap:12px}
+.intro .lead{color:var(--mut);font-size:1.05rem}
+.intro .lead b{color:var(--txt)}
+.aviso{border:1.5px solid var(--ambar);background:rgba(245,184,61,.08);border-radius:var(--r);padding:14px 16px;display:grid;gap:10px}
+.aviso b{color:var(--ambar)}
+.pasos{margin:0;padding-left:1.2em;color:var(--mut);display:grid;gap:4px;font-size:.95rem}
+.pasos b{color:var(--txt)}
+.grupo{display:grid;gap:14px;scroll-margin-top:64px}
+.grupo>p{color:var(--mut)}
+.tarjeta{border:1.5px solid var(--edge);border-radius:var(--r-lg);background:var(--ink-1);padding:14px;display:grid;gap:14px}
+.arriba{display:grid;grid-template-columns:118px 1fr;gap:14px;align-items:start}
+.vista{position:relative;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:#000 center/cover no-repeat;border:1px solid var(--edge)}
+.vista video{width:100%;height:100%;object-fit:cover}
+.vista button{position:absolute;inset:0;border:0;background:transparent;display:grid;place-items:center}
+.vista button span{width:46px;height:46px;border-radius:50%;background:var(--marca);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(163,230,53,.22)}
+.vista button svg{width:20px;height:20px;margin-left:3px;color:var(--marca-ink)}
+.datos{display:grid;gap:6px;align-content:start}
+.datos .meta{font-family:var(--mono);font-size:.68rem;color:var(--mut);letter-spacing:.04em}
+.datos .uso{font-size:.88rem;color:var(--mut)}
+.etq{justify-self:start;font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--marca);color:var(--marca-ink);padding:3px 7px;border-radius:4px}
+.btns{display:grid;gap:8px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:54px;padding:12px 18px;border-radius:var(--r);border:0;background:var(--marca);color:var(--marca-ink);font-family:var(--display);font-weight:800;font-size:1.05rem;line-height:1.1;text-decoration:none;text-align:center;position:relative;overflow:hidden;transition:transform .2s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn.sec{background:transparent;color:var(--txt);border:1.5px solid var(--edge)}
+.btn svg{width:22px;height:22px;flex:none}
+.btn .barrita{position:absolute;left:0;bottom:0;height:4px;background:var(--marca-ink);opacity:.35;width:0;transition:width .2s}
+.btn[disabled]{opacity:.85;cursor:progress}
+details.texto{border:1px solid var(--edge);border-radius:var(--r);background:var(--ink-2)}
+details.texto summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:50px;padding:10px 14px;font-weight:700}
+details.texto summary::-webkit-details-marker{display:none}
+details.texto summary::after{content:"+";flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--edge);display:grid;place-items:center;color:var(--marca);font-family:var(--mono)}
+details.texto[open] summary::after{content:"−"}
+.copia{padding:0 14px 14px;display:grid;gap:8px}
+.copia h4{margin:8px 0 0;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ambar)}
+.copia pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--body);font-size:.9rem;color:var(--txt);background:var(--ink-1);border:1px solid var(--edge-soft);border-radius:10px;padding:10px 12px}
+.copia button{justify-self:start;min-height:42px;padding:8px 14px;border-radius:10px;border:1.5px solid var(--marca);background:transparent;color:var(--marca);font-weight:700}
+.copia button.ok{background:var(--marca);color:var(--marca-ink)}
+.consejos{border-left:4px solid var(--marca);padding:4px 0 4px 14px;display:grid;gap:6px;color:var(--mut)}
+.consejos b{color:var(--txt)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;background:var(--marca);color:var(--marca-ink);font-family:var(--display);font-weight:800;padding:10px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.45);white-space:nowrap;animation:toast 2.4s var(--ease) both;pointer-events:none}
+@keyframes toast{0%{opacity:0;transform:translate(-50%,12px)}12%,82%{opacity:1;transform:translate(-50%,0)}100%{opacity:0}}
+@media (max-width:350px){.arriba{grid-template-columns:96px 1fr}.saltos{gap:4px}.saltos a{padding:4px 6px;font-size:.6rem}.logo{font-size:.92rem}.logo i{width:22px;height:22px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="iplay" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></symbol>
+  <symbol id="ibaja" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></symbol>
+</svg>
+
+<header class="barra">
+  <div class="cont"><span class="logo">EMPRENDE<i></i></span>
+    <nav class="saltos" aria-label="Secciones"><a href="#virales">Virales</a><a href="#redes">Redes</a><a href="#planes">Planes</a></nav></div>
+</header>
+
+<main class="cont">
+  <section class="intro">
+    <p class="k">Videos con voz y efectos · 1080×1920</p>
+    <h1>Tus videos, <em>listos para subir.</em></h1>
+    <p class="lead">Toca <b id="nomBoton">Guardar en mi teléfono</b> y el video queda en tu galería. Debajo de cada uno está el <b>texto para publicar</b>, con un botón para copiarlo.</p>
+    <div class="aviso" id="avisoApp" hidden>
+      <p><b>Estás dentro de TikTok o Instagram.</b> Ahí no se pueden guardar videos. Ábrela en tu navegador:</p>
+      <ol class="pasos"><li>Toca <b>⋯</b> (arriba a la derecha).</li><li>Elige <b>Abrir en el navegador</b> (Chrome o Safari).</li></ol>
+      <button class="btn sec" type="button" id="copiaLink">Copiar el link de esta página</button>
+    </div>
+  </section>
+
+  <section class="grupo" id="virales">
+    <h2>Virales · <em>link en la descripción</em></h2>
+    <p>Gancho en el primer segundo, transiciones rápidas y cierre con «link en la descripción».</p>
+  </section>
+  <section class="grupo" id="redes">
+    <h2>Para redes · <em>enlace en el perfil</em></h2>
+    <p>Más tranquilos: explican el bot, la venta contra entrega y la Academia.</p>
+  </section>
+  <section class="grupo" id="planes">
+    <h2>Los planes · <em>para estados y WhatsApp</em></h2>
+    <p>Para estados de WhatsApp o para mandarle a quien ya preguntó por los planes.</p>
+  </section>
+
+  <section class="consejos">
+    <p class="k">Para que rindan más</p>
+    <p><b>Música:</b> si pones un sonido en tendencia, déjalo al 10–15 % y el «sonido original» al 100 %, para que se entienda la voz.</p>
+    <p><b>Link:</b> en TikTok el link del texto no se puede tocar. Ponlo también en tu <b>perfil</b> y en el <b>comentario fijado</b>.</p>
+    <p><b>Ritmo:</b> uno por día, de 7 a 10 p. m., y responde los comentarios en la primera hora.</p>
+  </section>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var LINK = 'https://emprendexoficial-web.github.io/emprendex-videos/';
+  var V = [
+    { g: 'virales', a: 'viral-1', t: '¿Respondes tarde y el cliente se va?', d: '31 s', n: 'EmprendeX-viral-1-respondes-tarde.mp4', top: true,
+      textos: [
+        ['TikTok', 'Bot de WhatsApp para vender: responde a tus clientes en segundos, también a las 3 a. m. 🤖\n¿Pierdes ventas por contestar tarde? En mi cuenta el bot atendió 489 chats en un solo día.\n👉 Link: ' + LINK + '?src=tiktok (también en mi perfil)\n#botdewhatsapp #ventasporwhatsapp #dropshippingecuador #emprendimiento #contraentrega'],
+        ['Comentario fijado', 'El link para tener el bot en tu WhatsApp está en mi perfil 👆 ¿Cuántos chats contestas al día?'],
+        ['Instagram', 'Bot de WhatsApp para vender en Ecuador 🤖 | Responde a tus clientes en segundos\nSi respondes tarde, el cliente se va con otro. El bot atiende a todos a la vez, le vuelve a escribir a quien no compró y confirma el pedido.\nEn mi cuenta atendió 489 chats en un día (24 sep 2026). No es una promesa: tus resultados dependen de tu trabajo.\n👉 Link en la bio\n.\n#botdewhatsapp #whatsappbusiness #ventasporwhatsapp #dropshipping #dropshippingecuador #ecuador #quito #guayaquil #cuenca #emprendedores #negociosonline #ventasonline #contraentrega #automatizacion #emprendimientoecuador']
+      ] },
+    { g: 'virales', a: 'viral-2', t: '¿Compraste mercadería y se quedó en tu casa?', d: '34 s', n: 'EmprendeX-viral-2-mercaderia-en-casa.mp4',
+      textos: [
+        ['TikTok', 'Cómo vender sin comprar mercadería en Ecuador 📦 Dropshipping con pago contra entrega.\nTú consigues la venta, el proveedor envía y el cliente paga al recibir. Ejemplo real de cómo se reparten $25.\n👉 Link: ' + LINK + '?src=tiktok (también en mi perfil). El primer planeta de la Academia es gratis.\n#dropshippingecuador #contraentrega #vendersininventario #emprendimiento #ecuador'],
+        ['Comentario fijado', '¿Qué producto venderías primero? 👇 El link para empezar gratis está en mi perfil.'],
+        ['Instagram', 'Vender sin comprar mercadería en Ecuador 📦 | Dropshipping contra entrega explicado\nSin bodega, sin comprar por adelantado, sin despachar. El cliente paga cuando recibe.\nOjo: no todos los pedidos se entregan, por eso primero se hace la cuenta (te enseño a hacerla).\n👉 Link en la bio · Planeta 1 gratis\n.\n#dropshipping #dropshippingecuador #contraentrega #vendersininventario #negociosonline #emprendedores #ecuador #quito #guayaquil #ingresosextra #ventasonline #dropi #emprendimientoecuador #comovender']
+      ] },
+    { g: 'virales', a: 'viral-3', t: '¿Viste mil videos y sigues sin vender?', d: '33 s', n: 'EmprendeX-viral-3-mil-videos-sin-vender.mp4',
+      textos: [
+        ['TikTok', 'Curso de dropshipping como un videojuego 🎮 ¿Viste mil videos y sigues sin vender?\n8 planetas en orden, cada error es un jefe que vences, y tu personaje sube de Novato a Automatizador.\n👉 Link: ' + LINK + '?src=tiktok (también en mi perfil). El primer planeta es GRATIS.\n#cursodedropshipping #aprendeconmigo #dropshippingecuador #emprendimiento #gamificacion'],
+        ['Comentario fijado', '¿Qué jefe te ha ganado: El Dinero Fácil o El Margen Fantasma? 👇 Juega gratis con el link de mi perfil.'],
+        ['Instagram', 'Curso de dropshipping que se juega como videojuego 🎮 | Academia EmprendeX\nVideos sueltos ❌ → planeta por planeta ✅\nSolo teoría ❌ → práctica en la pantalla real ✅\nNadie te responde ❌ → el asistente Pablo en cada clase ✅\n👉 Link en la bio · el primer planeta es gratis\n.\n#cursodedropshipping #dropshipping #aprenderavender #ventasonline #emprendedores #ecuador #academiaonline #negociosonline #dropshippingecuador #gamificacion #emprendimientoecuador']
+      ] },
+    { g: 'redes', a: 'redes-1', t: '¿Quién contesta tus chats mientras duermes?', d: '23 s', n: 'EmprendeX-redes-1-el-bot-mientras-duermes.mp4',
+      textos: [
+        ['Descripción', 'Son las 3 de la mañana y el bot sigue atendiendo 🤖📲\nEn mi cuenta atendió 489 chats en un solo día (reporte del 24 de septiembre).\n¿Lo quieres en tu propio WhatsApp? El enlace está en mi perfil.\n\n#dropshipping #ecuador #emprendimiento #ventasporwhatsapp #contraentrega #negociosonline'],
+        ['Comentario fijado', '¿Cuántos chats te quedaron sin responder esta semana? 👇']
+      ] },
+    { g: 'redes', a: 'redes-2', t: 'Vende sin comprar ni un producto', d: '30 s', n: 'EmprendeX-redes-2-vende-sin-comprar.mp4',
+      textos: [
+        ['Descripción', 'Así viaja una venta contra entrega en Ecuador 📦\nTú consigues la venta, el proveedor envía y el cliente paga al recibir.\nOjo: no todos los pedidos se entregan, por eso primero se hace la cuenta.\nTe enseño todo desde cero. El primer planeta de la Academia es gratis: enlace en mi perfil.\n\n#dropshipping #ecuador #contraentrega #emprender #ventasonline #quito #guayaquil'],
+        ['Comentario fijado', '¿Qué producto venderías primero? 👇']
+      ] },
+    { g: 'redes', a: 'redes-3', t: 'Aprende a vender como un videojuego', d: '31 s', n: 'EmprendeX-redes-3-academia-videojuego.mp4',
+      textos: [
+        ['Descripción', '8 planetas, jefes que son los errores de quien empieza, y tu personaje sube de rango 🎮\nCada clase: teoría corta, práctica en la pantalla real y tarea en tu propio negocio.\nEl primer planeta es gratis. Juégalo con el enlace de mi perfil.\n\n#dropshipping #ecuador #aprendeconmigo #emprendimiento #academia #negociosonline'],
+        ['Comentario fijado', '¿Qué jefe crees que es el más difícil: El Dinero Fácil o El Margen Fantasma? 👇']
+      ] },
+    { g: 'planes', a: 'plan-vendedor', t: 'Plan Vendedor con Academia', d: '56 s', n: 'EmprendeX-plan-vendedor.mp4',
+      textos: [
+        ['Descripción', '¿Empiezas desde cero? Vende por WhatsApp sin comprar mercadería 📲\nUn bot que atiende tus chats y la Academia completa, planeta por planeta, con talleres en vivo.\n$59 al mes, sin permanencia. Escríbele a Samantha: el enlace está en mi perfil.\n\n#dropshippingecuador #ventasporwhatsapp #contraentrega #emprendimiento #ecuador']
+      ] },
+    { g: 'planes', a: 'plan-pro', t: 'Plan Pro · automatización completa', d: '42 s', n: 'EmprendeX-plan-pro.mp4',
+      textos: [
+        ['Descripción', '¿Ya vendes y el día no te alcanza? Con Pro, el sistema trabaja por ti 🤖\nBusca productos, llena la ficha, arma el bot y prepara la campaña. Tú revisas y dices que sí: la publicidad nunca arranca sin tu permiso.\n$109 al mes, sin permanencia. El enlace está en mi perfil.\n\n#automatizacion #ventasporwhatsapp #dropshippingecuador #emprendimiento #ecuador']
+      ] }
+  ];
+
+  var ua = navigator.userAgent || '';
+  var enApp = /TikTok|musical_ly|Bytedance|BytedanceWebview|Instagram|FBAN|FBAV|FB_IAB|Line\//i.test(ua);
+  var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var compartir = (function () { try { return !!(navigator.canShare && navigator.canShare({ files: [new File([''], 'a.mp4', { type: 'video/mp4' })] })); } catch (e) { return false; } })();
+
+  function aviso(txt) { var t = document.createElement('div'); t.className = 'toast'; t.textContent = txt; document.body.appendChild(t); setTimeout(function () { t.remove(); }, 2500); }
+  function copia(txt, boton, etiqueta) {
+    function bien() { if (boton) { boton.textContent = '✓ Copiado'; boton.classList.add('ok'); setTimeout(function () { boton.textContent = etiqueta; boton.classList.remove('ok'); }, 2000); } aviso('Texto copiado'); }
+    function viejo() { var a = document.createElement('textarea'); a.value = txt; a.setAttribute('readonly', ''); a.style.position = 'fixed'; a.style.opacity = '0'; document.body.appendChild(a); a.select(); a.setSelectionRange(0, txt.length); try { document.execCommand('copy'); bien(); } catch (e) { aviso('Mantén presionado el texto para copiarlo'); } a.remove(); }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(bien, viejo); else viejo();
+  }
+
+  if (enApp) { document.getElementById('avisoApp').hidden = false; }
+  if (!compartir) document.getElementById('nomBoton').textContent = 'Descargar video';
+  document.getElementById('copiaLink').addEventListener('click', function () { copia(location.href.split('#')[0], this, 'Copiar el link de esta página'); });
+
+  // baja el video con barra de avance y lo guarda en la galería (iPhone: «Guardar video»)
+  function baja(v, btn) {
+    var txt = btn.querySelector('.t'), barra = btn.querySelector('.barrita');
+    if (btn._archivo) { return comparte(v, btn); }
+    btn.disabled = true; txt.textContent = 'Preparando… 0 %';
+    fetch(v.a + '.mp4').then(function (r) {
+      if (!r.ok) throw new Error('http');
+      var total = +r.headers.get('content-length') || 0;
+      if (!r.body || !r.body.getReader || !total) return r.blob();
+      var lector = r.body.getReader(), partes = [], van = 0;
+      return (function lee() {
+        return lector.read().then(function (x) {
+          if (x.done) return new Blob(partes, { type: 'video/mp4' });
+          partes.push(x.value); van += x.value.length;
+          var p = Math.round(van / total * 100); txt.textContent = 'Preparando… ' + p + ' %'; barra.style.width = p + '%';
+          return lee();
+        });
+      })();
+    }).then(function (blob) {
+      btn._archivo = new File([blob], v.n, { type: 'video/mp4' });
+      btn.disabled = false; barra.style.width = '0';
+      txt.textContent = ios ? 'Listo: toca para guardar en Fotos' : 'Listo: toca para guardar';
+      comparte(v, btn);
+    }).catch(function () {
+      btn.disabled = false; barra.style.width = '0'; txt.textContent = 'Guardar en mi teléfono';
+      aviso('No se pudo bajar. Usa «Descargar archivo»');
+    });
+  }
+  function comparte(v, btn) {
+    navigator.share({ files: [btn._archivo], title: v.t }).then(function () {
+      btn.querySelector('.t').textContent = '✓ Guardado. Guardar otra vez';
+    }).catch(function (e) {
+      // si el teléfono pide otro toque, el botón ya dice «Listo: toca para guardar»
+      if (e && e.name === 'AbortError') btn.querySelector('.t').textContent = ios ? 'Listo: toca para guardar en Fotos' : 'Listo: toca para guardar';
+    });
+  }
+
+  V.forEach(function (v) {
+    var art = document.createElement('article'); art.className = 'tarjeta';
+    var botones = '';
+    if (compartir) botones += '<button class="btn" type="button" data-baja><svg aria-hidden="true"><use href="#ibaja"/></svg><span class="t">Guardar en mi teléfono</span><i class="barrita"></i></button>';
+    botones += '<a class="btn' + (compartir ? ' sec' : '') + '" href="' + v.a + '.mp4" download="' + v.n + '"><svg aria-hidden="true"><use href="#ibaja"/></svg>' + (compartir ? 'Descargar archivo' : 'Descargar video') + '</a>';
+    var textos = v.textos.map(function (x, j) {
+      return '<h4>' + x[0] + '</h4><pre>' + x[1].replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</pre><button type="button" data-copia="' + j + '">Copiar ' + x[0].toLowerCase() + '</button>';
+    }).join('');
+    art.innerHTML =
+      '<div class="arriba"><div class="vista" style="background-image:url(' + v.a + '.jpg)"><button type="button" aria-label="Ver el video ' + v.t + '"><span><svg aria-hidden="true"><use href="#iplay"/></svg></span></button></div>' +
+      '<div class="datos">' + (v.top ? '<span class="etq">Empieza por este</span>' : '') + '<h3>' + v.t + '</h3><p class="meta">' + v.d + ' · con voz y efectos</p></div></div>' +
+      '<div class="btns">' + botones + '</div>' +
+      '<details class="texto"><summary>Texto para publicar</summary><div class="copia">' + textos + '</div></details>';
+    art.querySelector('.vista button').addEventListener('click', function () {
+      var caja = art.querySelector('.vista'), vid = document.createElement('video');
+      vid.src = v.a + '.mp4'; vid.poster = v.a + '.jpg'; vid.controls = true; vid.playsInline = true; vid.setAttribute('playsinline', '');
+      caja.innerHTML = ''; caja.appendChild(vid); var p = vid.play(); if (p && p.catch) p.catch(function () {});
+    });
+    var b = art.querySelector('[data-baja]'); if (b) b.addEventListener('click', function () { baja(v, b); });
+    Array.prototype.forEach.call(art.querySelectorAll('[data-copia]'), function (c) {
+      var x = v.textos[+c.dataset.copia], et = c.textContent;
+      c.addEventListener('click', function () { copia(x[1], c, et); });
+    });
+    document.getElementById(v.g).appendChild(art);
+  });
+})();
+</script>
+</body>
+</html>
