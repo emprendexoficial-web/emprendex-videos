@@ -466,7 +466,13 @@ main{padding:22px 0 140px}
   function $(id) { return document.getElementById(id); }
   function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
   var ORIGEN = (function () { try { var q = (location.search + ' ' + document.referrer).toLowerCase(); if (q.indexOf('tiktok') > -1) return ' (vengo de TikTok)'; if (q.indexOf('instagram') > -1) return ' (vengo de Instagram)'; if (q.indexOf('youtube') > -1) return ' (vengo de YouTube)'; } catch (e) {} return ''; })();
-  $$('[data-wa]').forEach(function (a) { a.href = 'https://wa.me/' + NUM + '?text=' + encodeURIComponent(a.dataset.wa + ORIGEN); });
+  // código del vendedor que trajo a la persona (?v=ANA01): se guarda en el teléfono y viaja en el mensaje de WhatsApp
+  var VEND = (function () {
+    var c = ''; try { c = (new URLSearchParams(location.search).get('v') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12); } catch (e) {}
+    try { if (c) localStorage.setItem('emx-vendedor', c); else c = localStorage.getItem('emx-vendedor') || ''; } catch (e) {}
+    return c;
+  })();
+  $$('[data-wa]').forEach(function (a) { a.href = 'https://wa.me/' + NUM + '?text=' + encodeURIComponent(a.dataset.wa + ORIGEN + (VEND ? '\nCódigo de vendedor: ' + VEND : '')); });
 
   /* ---------- estado guardado en este teléfono ---------- */
   var E = { paso: 0, hecho: {} };
