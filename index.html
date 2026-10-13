@@ -193,6 +193,24 @@ main{padding:22px 0 140px}
 .nota{font-size:.8rem;color:var(--dim)}
 @media (min-width:700px){.heroe img{width:150px;height:150px}.planes{grid-template-columns:1fr 1fr}.planes .plan.top{grid-column:1/-1}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.plan.pro{border:2px solid var(--marca);background:linear-gradient(180deg,rgba(163,230,53,.10),var(--ink-1) 40%)}
+.insig.auto{background:linear-gradient(90deg,var(--marca),var(--marca-2));font-size:.72rem;padding:6px 10px}
+.pro-t{font-family:var(--display);font-weight:800;font-size:1.25rem}
+.si-lista{list-style:none!important;padding:0!important;margin:0;display:grid;gap:6px}
+.si-lista li{display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:center;color:var(--txt)!important;font-size:.98rem}
+.si-lista b{display:grid;place-items:center;height:28px;border-radius:8px;background:var(--marca);color:var(--marca-ink);font-family:var(--display);font-weight:900;font-size:.9rem}
+.pro-tu{font-size:.95rem;color:var(--mut);border-left:3px solid var(--marca);padding-left:12px}
+.pro-tu b{color:var(--txt)}
+.dudas{display:grid;gap:8px}
+.dudas .grupo{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ambar);margin-top:12px}
+.dudas details{border:1px solid var(--edge);border-radius:var(--r);background:var(--ink-1)}
+.dudas summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:54px;padding:12px 14px;font-weight:700;line-height:1.25}
+.dudas summary::-webkit-details-marker{display:none}
+.dudas summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--edge);display:grid;place-items:center;color:var(--marca);font-family:var(--mono)}
+.dudas details[open] summary::after{content:"−"}
+.dudas details p{padding:0 14px 14px;color:var(--mut)}
+.dudas details p b{color:var(--txt)}
+@media (min-width:700px){.planes .plan.pro{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -330,32 +348,71 @@ main{padding:22px 0 140px}
     <li><span><b>El bot</b>: atiende tu WhatsApp a cualquier hora.</span></li>
     <li><span><b>La Academia</b>: 8 planetas, desde cero hasta automatizar.</span></li>
   </ul>
-  <h2>Elige cómo <em>empezar.</em></h2>
+  <h2>Elige tu plan y <em>empieza hoy.</em></h2>
+  <p class="lead">Toca el plan que quieres: se abre WhatsApp con el mensaje <b>ya escrito</b> para Samantha. Solo lo envías.</p>
   <div class="planes">
     <article class="plan top">
       <span class="insig">Para empezar de cero</span>
       <div class="cab"><h3>Vendedor con Academia</h3><span class="precio">$59<small>al mes</small></span></div>
       <p class="chica" style="color:var(--marca)">Menos de $2 al día · mes a mes, sin permanencia</p>
-      <ul><li>El bot que vende por WhatsApp, en tu número</li><li>Todos los planetas de la Academia y los talleres en vivo</li><li>400 créditos y 1.000 mensajes de remarketing al mes</li><li>Calculadoras, tablero de clientes y recuperación de pedidos</li></ul>
+      <ul><li>El bot que vende por WhatsApp, en tu propio número</li><li>Todos los planetas de la Academia, talleres en vivo y sus grabaciones</li><li>El asistente Pablo responde en cada clase</li><li>400 créditos y 1.000 mensajes de remarketing al mes</li><li>Calculadoras sin límite, tablero de clientes y recuperación de pedidos</li><li>Grupo de soporte del bot</li></ul>
       <button class="mini" type="button" data-mini="v2/plan-vendedor.mp4"><img src="v2/plan-vendedor.jpg" alt=""><span><b>▶ El plan en 1 minuto</b><span>Con voz</span></span></button>
-      <a class="btn wa" data-wa="Hola, terminé el recorrido de EmprendeX y quiero el plan Vendedor con Academia ($59 al mes)" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#iwa"/></svg>Quiero este plan</a>
+      <a class="btn wa" data-wa="Hola Samantha 👋 Terminé el recorrido de EmprendeX y quiero iniciar con el plan *Vendedor con Academia* ($59 al mes). ¿Cómo hago el pago para empezar?" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#iwa"/></svg>Quiero iniciar con este plan</a>
     </article>
-    <article class="plan">
+    <article class="plan pro">
+      <span class="insig auto">Automatización completa</span>
       <div class="cab"><h3>Pro</h3><span class="precio">$109<small>al mes</small></span></div>
-      <p class="chica">Si ya vendes y quieres automatizar todo</p>
-      <ul><li>Todo lo de Vendedor con Academia</li><li>Claude trabaja dentro de tu plataforma: busca productos, arma el bot y te prepara la campaña (queda en pausa hasta que digas que sí)</li><li>1.000 créditos y 2.500 mensajes al mes · Planeta Automatización</li></ul>
+      <p class="chica" style="color:var(--marca)">Para quien ya vende y quiere que el sistema trabaje por él</p>
+      <p class="pro-t">¿El sistema lo hace por mí?</p>
+      <ul class="si-lista">
+        <li><b>SÍ</b><span>Busca productos por ti</span></li>
+        <li><b>SÍ</b><span>Crea la ficha del producto completa</span></li>
+        <li><b>SÍ</b><span>Deja tu bot armado y listo para vender</span></li>
+        <li><b>SÍ</b><span>Te prepara la campaña de anuncios</span></li>
+        <li><b>SÍ</b><span>Atiende todos tus chats a la vez, día y noche</span></li>
+        <li><b>SÍ</b><span>Le vuelve a escribir a quien no compró: 2.500 mensajes al mes</span></li>
+        <li><b>SÍ</b><span>1.000 créditos al mes, y los extra te salen más baratos</span></li>
+        <li><b>SÍ</b><span>Planeta Automatización: 10 clases para dominar el sistema</span></li>
+      </ul>
+      <p class="pro-tu"><b>Tu trabajo con Pro:</b> revisar, decir que sí a la campaña y subir los pedidos. Lo pesado lo deja listo el sistema, y <b>la publicidad nunca arranca sin tu permiso.</b></p>
       <button class="mini" type="button" data-mini="v2/plan-pro.mp4"><img src="v2/plan-pro.jpg" alt=""><span><b>▶ Pro en 40 segundos</b><span>Con voz</span></span></button>
-      <a class="btn sec" data-wa="Hola, terminé el recorrido de EmprendeX y quiero información del plan Pro ($109 al mes)" href="#" target="_blank" rel="noopener">Preguntar por Pro</a>
-      <p class="nota">Claude y Dropkiller se pagan aparte. Hoy es un número de WhatsApp por cuenta.</p>
+      <a class="btn wa" data-wa="Hola Samantha 👋 Terminé el recorrido de EmprendeX y quiero iniciar con el plan *Pro* ($109 al mes), con la automatización completa. ¿Cómo hago el pago para empezar?" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#iwa"/></svg>Quiero la automatización completa</a>
+      <p class="nota">Claude y Dropkiller (el buscador de productos) se pagan aparte, cada uno a su dueño. Hoy es un número de WhatsApp por cuenta.</p>
     </article>
     <article class="plan">
       <div class="cab"><h3>Solo el bot</h3><span class="precio">$49<small>al mes</small></span></div>
-      <p class="chica">Si ya sabes vender y solo quieres la herramienta</p>
-      <a class="btn sec" data-wa="Hola, terminé el recorrido de EmprendeX y quiero información del plan Vendedor, solo el bot ($49 al mes)" href="#" target="_blank" rel="noopener">Preguntar por este plan</a>
+      <p class="chica">Si ya sabes vender y solo quieres la herramienta, sin los demás planetas de la Academia.</p>
+      <a class="btn sec" data-wa="Hola Samantha 👋 Terminé el recorrido de EmprendeX y quiero iniciar con el plan *Vendedor, solo el bot* ($49 al mes). ¿Cómo hago el pago para empezar?" href="#" target="_blank" rel="noopener">Quiero iniciar con este plan</a>
     </article>
   </div>
+
+  <div class="dudas">
+    <p class="k">Antes de escribir</p>
+    <h2>Todas tus dudas, <em>resueltas.</em></h2>
+    <p class="grupo">Para empezar</p>
+    <details><summary>¿Necesito experiencia?</summary><p>No. La Academia te lleva desde cero, planeta por planeta, con teoría corta, práctica en la pantalla real y una tarea en tu propio negocio. <b>El primer planeta es gratis.</b></p></details>
+    <details><summary>¿Tengo que comprar mercadería o tener bodega?</summary><p>No. El producto lo tiene el proveedor en su bodega (en <b>Dropi</b>, la plataforma de proveedores) y él lo envía. Tú consigues la venta.</p></details>
+    <details><summary>¿Qué plan me conviene?</summary><p>Si empiezas de cero: <b>Vendedor con Academia</b>. Si ya sabes vender y solo quieres el bot: <b>Solo el bot</b>. Si ya vendes y quieres que el sistema haga lo pesado: <b>Pro</b>. Si dudas, Samantha te ayuda a elegir.</p></details>
+    <details><summary>¿Cuánto tiempo al día le dedico?</summary><p>Preparas el producto y el bot una vez. Después, tu trabajo de cada día es <b>subir los pedidos y darles seguimiento</b>. Los chats los atiende el bot.</p></details>
+    <p class="grupo">La plata</p>
+    <details><summary>¿Cuánto necesito para empezar?</summary><p>El plan (desde <b>$49 al mes</b>) más la publicidad que le pagas a Meta (Facebook e Instagram). <b>El presupuesto de anuncios lo decides tú.</b> El bot usa tu propia clave de inteligencia artificial: con la de Google puedes empezar gratis.</p></details>
+    <details><summary>¿Hay contrato o permanencia?</summary><p>No. <b>Se paga mes a mes y cancelas cuando quieras.</b></p></details>
+    <details><summary>¿Cómo pago el plan?</summary><p>Escríbele a Samantha con el plan que elegiste: <b>ella te indica las formas de pago</b> y te ayuda a activar tu cuenta.</p></details>
+    <details><summary>¿Me garantizan ventas?</summary><p>No, y desconfía de quien te lo prometa. Los resultados dependen de tu producto, tu anuncio y tu trabajo. Lo que sí te damos es el método, el bot, las herramientas y el acompañamiento.</p></details>
+    <details><summary>¿Y si el cliente no recibe el paquete?</summary><p>Pasa: no todos los pedidos se entregan, y ese envío se paga igual. Por eso la cuenta del paso 3 ya lo descuenta, y la plataforma tiene <b>seguimiento del pedido</b> y <b>recuperación de pedidos a medias</b>.</p></details>
+    <p class="grupo">El bot y la plataforma</p>
+    <details><summary>¿El bot vende desde mi propio número?</summary><p>Sí. Conectas tu número de WhatsApp una sola vez, con un tutorial adentro, y el bot atiende ahí. Hoy es un número por cuenta.</p></details>
+    <details><summary>¿El bot suena como robot?</summary><p>Usa el <b>Método EmprendeX</b>: bienvenida, audios, imágenes de tu producto y recordatorios. Antes de gastar en anuncios, <b>lo pruebas tú mismo</b> desde tu WhatsApp.</p></details>
+    <details><summary>¿Qué son los créditos?</summary><p>El saldo con el que la plataforma crea anuncios, audios e ideas de venta. Por ejemplo, <b>un anuncio cuesta 4 créditos</b>. Vendedor trae 400 al mes y Pro, 1.000.</p></details>
+    <details><summary>¿Quién me ayuda si me trabo?</summary><p>Tienes el <b>grupo de soporte del bot</b>, los <b>talleres en vivo</b> (quedan grabados) y el <b>asistente Pablo</b> en cada clase. Y Samantha por WhatsApp.</p></details>
+    <p class="grupo">El plan Pro</p>
+    <details><summary>¿Pro de verdad automatiza todo?</summary><p><b>Sí.</b> Claude trabaja dentro de tu plataforma: busca productos, deja la ficha y el bot armados y te prepara la campaña. El bot atiende los chats y el remarketing recupera a quien no compró. Tú revisas, apruebas y subes los pedidos.</p></details>
+    <details><summary>¿La campaña se publica sola?</summary><p>No sin ti: <b>queda en pausa hasta que tú digas que sí.</b> Nada de publicidad arranca sin tu permiso.</p></details>
+    <details><summary>¿Qué se paga aparte en Pro?</summary><p><b>Claude</b> (el asistente de inteligencia artificial) y <b>Dropkiller</b> (el buscador de productos), cada uno a su dueño.</p></details>
+  </div>
+
   <div class="cierre">
-    <a class="btn wa" data-wa="Hola, terminé el recorrido de EmprendeX y quiero empezar. ¿Me ayudas a elegir?" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#iwa"/></svg>Escribirle a Samantha</a>
+    <a class="btn wa" data-wa="Hola Samantha 👋 Terminé el recorrido de EmprendeX y quiero empezar. Todavía no sé qué plan elegir: ¿me ayudas?" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#iwa"/></svg>Aún dudo: ayúdame a elegir</a>
     <a class="btn sec" href="https://www.emprendexpro.com/aprende" target="_blank" rel="noopener">Jugar gratis el Planeta 1</a>
     <p class="nota">Nada de esto es una promesa de ingresos: los ejemplos son para entender el negocio. <a href="completa.html">Ver la página completa con todos los detalles</a>.</p>
   </div>
