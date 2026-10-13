@@ -82,6 +82,13 @@ main{padding:22px 0 140px}
 .pruebas div{background:var(--ink-1);border:1px solid var(--edge);border-radius:var(--r);padding:12px 10px}
 .pruebas b{display:block;font-family:var(--display);font-weight:900;font-size:1.7rem;line-height:1;color:var(--marca)}
 .pruebas span{display:block;font-size:.76rem;line-height:1.25;color:var(--mut);margin-top:6px}
+.filtro{border:2px solid var(--coral);border-radius:var(--r-lg);padding:18px 16px;background:linear-gradient(180deg,rgba(255,93,78,.10),rgba(255,93,78,.02));display:grid;gap:10px}
+.filtro .k{color:var(--coral)}
+.filtro h2 em{color:var(--coral)}
+.filtro p{color:var(--mut);font-size:1.02rem;line-height:1.45}
+.filtro p b{color:var(--txt)}
+.filtro .si{border-top:1px dashed rgba(255,93,78,.4);padding-top:10px;color:var(--txt)}
+.filtro .si b{color:var(--marca)}
 .temario{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:t}
 .temario li{display:grid;grid-template-columns:32px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border-radius:var(--r);background:var(--ink-1);border:1px solid var(--edge-soft)}
 .temario li::before{counter-increment:t;content:counter(t);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--ink-3);font-family:var(--mono);font-weight:700;color:var(--marca)}
@@ -215,6 +222,13 @@ main{padding:22px 0 140px}
     <div><b>330</b><span>estudiantes en la comunidad</span></div>
   </div>
   <p class="chica">Datos de mi cuenta (12 y 24 sep 2026) y de la comunidad (oct 2026). No son una promesa: tus resultados dependen de tu trabajo.</p>
+  <div class="filtro">
+    <p class="k">Antes de empezar, léelo</p>
+    <h2>Esto <em>no es para todos.</em></h2>
+    <p>Si no eres capaz de darle <b>8 minutos</b> a entender cómo funciona este negocio, no vas a llegar lejos con él. Y está bien: <b>mejor regrésate ahora</b> y no pierdas tu tiempo ni tu plata.</p>
+    <p>Vender por internet pide lo mismo que este recorrido: <b>terminar lo que empiezas.</b> Ver, entender, hacer tu cuenta, probar y no rendirte a la primera.</p>
+    <p class="si">Estos 8 minutos son tu primera prueba. <b>Si llegas al final, ya demostraste lo que más importa.</b></p>
+  </div>
   <ol class="temario" id="temario">
     <li><span><b>Mira el negocio</b><small>video de 2 minutos</small></span><span class="ok" data-ok="1"></span></li>
     <li><span><b>Cómo viaja una venta</b><small>4 pasos y una pregunta</small></span><span class="ok" data-ok="2"></span></li>
@@ -309,6 +323,7 @@ main{padding:22px 0 140px}
 <!-- 6 · EMPEZAR -->
 <section class="paso" data-paso="6" data-nom="Empezar">
   <div class="insignia"><img class="px" src="img/img16.webp" width="86" height="86" alt="El personaje celebrando"><div><p class="k">Recorrido completado</p><h2 style="font-size:1.6rem">¡Ya entiendes <em>el negocio!</em></h2></div></div>
+  <p class="lead">Te dije que era una prueba, y <b>la pasaste.</b> Terminaste lo que empezaste, y eso es lo que más pesa en este negocio. Ahora te toca dar el siguiente paso.</p>
   <ul class="repaso">
     <li><span><b>Cómo funciona</b>: vendes sin comprar antes y el cliente paga al recibir.</span></li>
     <li><span><b>Tu cuenta</b>: producto, envío, publicidad y los pedidos que no se entregan.</span></li>
@@ -364,7 +379,8 @@ main{padding:22px 0 140px}
   function guarda() { try { localStorage.setItem('emx-embudo', JSON.stringify(E)); } catch (e) {} }
   var TOTAL = 6, PASOS = $$('.paso');
   var TXT = { 0: 'Empezar el recorrido', 1: 'Siguiente: cómo viaja una venta', 2: 'Siguiente: haz tu cuenta', 3: 'Siguiente: el bot', 4: 'Siguiente: tu camino', 5: 'Ver cómo empezar' };
-  var CANDADO = { 1: 'Mira el video al 85 % para seguir', 2: 'Toca los 4 pasos y responde la pregunta', 3: 'Mueve al menos un número', 4: 'Mira el video al 80 % para seguir', 5: 'Toca al menos 3 planetas' };
+  var CANDADO = { 1: 'Mira el video al 85 %. Quien termina esto, termina lo demás', 2: 'Toca los 4 pasos y responde. Vas bien, no te detengas', 3: 'Mueve al menos un número. El que hace su cuenta, no pierde plata', 4: 'Mira el video al 80 %. Ya pasaste la mitad', 5: 'Toca al menos 3 planetas. Estás a un paso del final' };
+  var TXT0 = 'Acepto el reto: empezar';
   function abierto(n) { return n === 0 || !!E.hecho[n]; }
   function desbloquea(n) { if (E.hecho[n]) return; E.hecho[n] = true; guarda(); pinta(); }
   function ir(n) {
@@ -383,7 +399,7 @@ main{padding:22px 0 140px}
     at.hidden = n === 0; $('pieC').classList.toggle('solo', n === 0);
     if (n === TOTAL) { $('pieC').parentElement.style.display = 'none'; return; }
     $('pieC').parentElement.style.display = '';
-    sig.textContent = (E.paso === 0 && Object.keys(E.hecho).length) ? 'Seguir donde iba' : TXT[n];
+    sig.textContent = (E.paso === 0 && Object.keys(E.hecho).length) ? 'Seguir donde iba' : n === 0 ? TXT0 : TXT[n];
     sig.disabled = !abierto(n);
     $('candado').textContent = abierto(n) ? '' : '🔒 ' + CANDADO[n];
   }
