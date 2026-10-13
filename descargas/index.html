@@ -95,7 +95,7 @@ details.texto[open] summary::after{content:"−"}
 
 <header class="barra">
   <div class="cont"><span class="logo">EMPRENDE<i></i></span>
-    <nav class="saltos" aria-label="Secciones"><a href="#virales">Virales</a><a href="#redes">Redes</a><a href="#planes">Planes</a></nav></div>
+    <nav class="saltos" aria-label="Secciones"><a href="#virales">Virales</a><a href="#redes">Redes</a><a href="#planes">Planes</a><a href="#lives">Lives</a></nav></div>
 </header>
 
 <main class="cont">
@@ -121,6 +121,13 @@ details.texto[open] summary::after{content:"−"}
   <section class="grupo" id="planes">
     <h2>Los planes · <em>para estados y WhatsApp</em></h2>
     <p>Para estados de WhatsApp o para mandarle a quien ya preguntó por los planes.</p>
+  </section>
+
+  <section class="grupo" id="lives">
+    <h2>Reclutar · <em>gente para lives</em></h2>
+    <p>Para buscar personas que hagan lives vendiendo los planes. Postulan aquí: <a href="../lives/?src=tiktok">página para postular</a>.</p>
+    <div class="tarjeta fija"><div class="datos"><h3>Imágenes del anuncio</h3><p class="meta">Feed 1080×1350 · Historia 1080×1920</p></div>
+      <div class="btns"><a class="btn sec" href="lives-feed.jpg" download="EmprendeX-lives-feed.jpg"><svg aria-hidden="true"><use href="#ibaja"/></svg>Imagen para el feed</a><a class="btn sec" href="lives-story.jpg" download="EmprendeX-lives-historia.jpg"><svg aria-hidden="true"><use href="#ibaja"/></svg>Imagen para historias</a></div></div>
   </section>
 
   <section class="consejos">
@@ -172,6 +179,13 @@ details.texto[open] summary::after{content:"−"}
     { g: 'planes', a: 'plan-vendedor', t: 'Plan Vendedor con Academia', d: '56 s', n: 'EmprendeX-plan-vendedor.mp4',
       textos: [
         ['Descripción', '¿Empiezas desde cero? Vende por WhatsApp sin comprar mercadería 📲\nUn bot que atiende tus chats y la Academia completa, planeta por planeta, con talleres en vivo.\n$59 al mes, sin permanencia. Escríbele a Samantha: el enlace está en mi perfil.\n\n#dropshippingecuador #ventasporwhatsapp #contraentrega #emprendimiento #ecuador']
+      ] },
+    { g: 'lives', a: 'lives', t: '¿Se te da bien vender? Haz lives desde casa', d: '32 s', n: 'EmprendeX-lives-reclutamiento.mp4', top: true,
+      textos: [
+        ['TikTok', '¿Se te da bien vender? Busco personas para hacer lives de venta desde su casa 🎥\nPuedes ganar de $40 a $100 al día presentando los planes de EmprendeX.\nRequisitos: saber vender, laptop o computadora y un iPhone.\n👉 Postula aquí: ' + LINK + 'lives/?src=tiktok (también en mi perfil)\n#trabajodesdecasa #trabajoecuador #empleoecuador #ventas #vendedores #lives #quito #guayaquil #cuenca'],
+        ['Comentario fijado', 'Postula en 1 minuto con el link de mi perfil 👆 ¿Ya has hecho lives alguna vez?'],
+        ['Instagram y Facebook', '¿Se te da bien vender? 🎥 Haz lives de venta desde tu casa\nBusco personas para presentar en vivo los planes de EmprendeX: el bot que vende por WhatsApp, la Academia y el plan Pro.\n💵 Puedes ganar de $40 a $100 al día. Los detalles del pago te los explicamos por WhatsApp.\n✅ Requisitos: saber vender · laptop o computadora · un iPhone\n👉 Postula con el link de la bio\n.\n#trabajodesdecasa #trabajoecuador #empleoecuador #ventas #vendedores #ventasonline #lives #emprendimiento #ecuador #quito #guayaquil #cuenca'],
+        ['Estado de WhatsApp', '¿Se te da bien vender? Busco gente para hacer lives desde casa 🎥 De $40 a $100 al día.\nRequisitos: saber vender, laptop y iPhone. Postula aquí 👉 ' + LINK + 'lives/?src=whatsapp']
       ] },
     { g: 'planes', a: 'plan-pro', t: 'Plan Pro · automatización completa', d: '42 s', n: 'EmprendeX-plan-pro.mp4',
       textos: [
@@ -255,7 +269,7 @@ details.texto[open] summary::after{content:"−"}
       var x = v.textos[+c.dataset.copia], et = c.textContent;
       c.addEventListener('click', function () { copia(x[1], c, et); });
     });
-    document.getElementById(v.g).appendChild(art);
+    var gr = document.getElementById(v.g); gr.insertBefore(art, gr.querySelector('.fija'));
   });
 })();
 </script>
