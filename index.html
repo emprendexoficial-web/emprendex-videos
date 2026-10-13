@@ -231,6 +231,22 @@ main{padding:22px 0 140px}
 .dudas details p{padding:0 14px 14px;color:var(--mut)}
 .dudas details p b{color:var(--txt)}
 @media (min-width:700px){.planes .plan.pro{grid-column:1/-1}}
+/* que nadie se aburra: todo se mueve solo */
+.carta.aqui{border-color:var(--marca);box-shadow:0 0 0 4px rgba(163,230,53,.18);transform:scale(1.02)}
+.carta{transition:border-color .3s,background .3s,transform .35s var(--ease),box-shadow .35s}
+.hilo{height:4px;border-radius:2px;background:var(--edge);overflow:hidden}
+.hilo i{display:block;height:100%;width:0;background:var(--marca);transition:width 1.5s linear}
+.paso.on .av .f{animation:sube .5s var(--ease) both}
+.paso.on .av .f:nth-child(2){animation-delay:.5s}.paso.on .av .f:nth-child(3){animation-delay:1s}.paso.on .av .f:nth-child(4){animation-delay:1.5s}
+@keyframes sube{from{opacity:0;transform:translateY(14px)}}
+.galaxia button.vista img{filter:none}
+.galaxia button[aria-pressed="true"] img{animation:brilla 1.2s ease-out}
+@keyframes brilla{0%{transform:scale(.8)}50%{transform:scale(1.22);filter:drop-shadow(0 0 14px rgba(163,230,53,.8))}100%{transform:scale(1.12)}}
+.planeta-d{animation:none}.planeta-d.cambia{animation:sube .4s var(--ease)}
+.btn.listo{animation:late .9s var(--ease) 2}
+@keyframes late{50%{transform:scale(1.04);box-shadow:0 0 0 10px rgba(163,230,53,.25)}}
+.ok-toast{position:fixed;left:50%;top:76px;transform:translateX(-50%);z-index:30;background:var(--marca);color:var(--marca-ink);font-family:var(--display);font-weight:800;padding:10px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.4);animation:toast 2.2s var(--ease) both;pointer-events:none;white-space:nowrap}
+@keyframes toast{0%{opacity:0;transform:translate(-50%,-14px)}12%,80%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-8px)}}
 </style>
 </head>
 <body>
@@ -269,8 +285,8 @@ main{padding:22px 0 140px}
   </div>
   <ol class="temario" id="temario">
     <li><span><b>Mira el negocio</b><small>video de 2 minutos</small></span><span class="ok" data-ok="1"></span></li>
-    <li><span><b>Cómo viaja una venta</b><small>4 pasos y una pregunta</small></span><span class="ok" data-ok="2"></span></li>
-    <li><span><b>Haz tu cuenta</b><small>calculadora</small></span><span class="ok" data-ok="3"></span></li>
+    <li><span><b>Cómo viaja una venta</b><small>animación de 10 segundos</small></span><span class="ok" data-ok="2"></span></li>
+    <li><span><b>Haz tu cuenta</b><small>un ejemplo con números</small></span><span class="ok" data-ok="3"></span></li>
     <li><span><b>El bot que vende por ti</b><small>video corto</small></span><span class="ok" data-ok="4"></span></li>
     <li><span><b>Tu camino en la Academia</b><small>8 planetas</small></span><span class="ok" data-ok="5"></span></li>
     <li><span><b>Elige cómo empezar</b><small>al final</small></span><span class="ok" data-ok="6"></span></li>
@@ -301,15 +317,16 @@ main{padding:22px 0 140px}
 <!-- 2 · LA VENTA -->
 <section class="paso" data-paso="2" data-nom="La venta">
   <p class="k">Paso 2 de 6 · Cómo viaja una venta</p>
-  <h2>Toca cada paso y <em>míralo pasar.</em></h2>
+  <h2>Así viaja una venta, <em>de principio a fin.</em></h2>
+  <div class="hilo" id="hilo2"><i></i></div>
   <div class="tocar" id="cartas">
-    <button class="carta" type="button"><span class="n">1</span><span><b>El cliente ve tu anuncio y te escribe</b><span class="det">Te llega un mensaje por WhatsApp. Ahí pide el producto. Todavía no paga nada.</span><span class="tq">Toca para ver</span></span></button>
-    <button class="carta" type="button"><span class="n">2</span><span><b>Tú pasas el pedido al proveedor</b><span class="det">Subes nombre, ciudad y dirección del cliente. Nada más.</span><span class="tq">Toca para ver</span></span></button>
-    <button class="carta" type="button"><span class="n">3</span><span><b>El proveedor empaca y envía</b><span class="det">Sale de su bodega directo al cliente. Tú nunca tocas el producto.</span><span class="tq">Toca para ver</span></span></button>
-    <button class="carta" type="button"><span class="n">4</span><span><b>El cliente paga al recibir</b><span class="det">Paga en efectivo cuando ya tiene el producto en la mano. Por eso se anima a comprar.</span><span class="tq">Toca para ver</span></span></button>
+    <button class="carta" type="button"><span class="n">1</span><span><b>El cliente ve tu anuncio y te escribe</b><span class="det">Te llega un mensaje por WhatsApp. Ahí pide el producto. Todavía no paga nada.</span></span></button>
+    <button class="carta" type="button"><span class="n">2</span><span><b>Tú pasas el pedido al proveedor</b><span class="det">Subes nombre, ciudad y dirección del cliente. Nada más.</span></span></button>
+    <button class="carta" type="button"><span class="n">3</span><span><b>El proveedor empaca y envía</b><span class="det">Sale de su bodega directo al cliente. Tú nunca tocas el producto.</span></span></button>
+    <button class="carta" type="button"><span class="n">4</span><span><b>El cliente paga al recibir</b><span class="det">Paga en efectivo cuando ya tiene el producto en la mano. Por eso se anima a comprar.</span></span></button>
   </div>
   <div class="preg" id="preg2" hidden>
-    <h3>Pregunta rápida: ¿cuándo paga el cliente?</h3>
+    <h3>Pregunta rápida (si quieres): ¿cuándo paga el cliente?</h3>
     <div class="opc">
       <button type="button" data-r="no">Cuando hace el pedido por WhatsApp</button>
       <button type="button" data-r="si">Cuando recibe el paquete en su puerta</button>
@@ -323,7 +340,7 @@ main{padding:22px 0 140px}
 <section class="paso" data-paso="3" data-nom="La cuenta">
   <p class="k">Paso 3 de 6 · Haz tu cuenta</p>
   <h2>¿Cuánto te queda <em>por pedido?</em></h2>
-  <p class="lead">Mueve los números. <b>Cuenta también los pedidos que no se entregan</b>: ese envío igual se paga.</p>
+  <p class="lead">Un ejemplo con números de verdad. <b>Fíjate en los pedidos que no se entregan</b>: ese envío igual se paga. Si quieres, mueve los números y prueba con tu producto.</p>
   <div class="cuenta">
     <div class="res" id="res" aria-live="polite"><p class="k" style="margin:0">Te queda, en promedio, por pedido</p><div class="grande" id="resN">$0</div><p id="resD"></p></div>
     <div class="campos" id="campos"></div>
@@ -353,9 +370,9 @@ main{padding:22px 0 140px}
 <section class="paso" data-paso="5" data-nom="La Academia">
   <p class="k">Paso 5 de 6 · Tu camino</p>
   <h2>Aprendes jugando, <em>planeta por planeta.</em></h2>
-  <p class="lead">Cada tema es un planeta y cada error de quien empieza es un jefe que vences. <b>Toca al menos 3 planetas</b> para ver qué aprendes.</p>
+  <p class="lead">Cada tema es un planeta y cada error de quien empieza es un jefe que vences. Mira cómo avanzas: <b>de Novato a Automatizador.</b></p>
   <div class="galaxia" id="galaxia"></div>
-  <div class="planeta-d" id="planetaD" aria-live="polite"><h3>Toca un planeta</h3><p>Verás de qué se trata y qué jefe vences.</p></div>
+  <div class="planeta-d" id="planetaD" aria-live="polite"><h3>1 · Planeta Raíz <em>(gratis)</em></h3><p>Sales de aquí cuando: <b>Entiendes el negocio desde cero.</b> El jefe que vences: <b>El Dinero Fácil</b>.</p></div>
 </section>
 
 <!-- 6 · EMPEZAR -->
@@ -456,16 +473,26 @@ main{padding:22px 0 140px}
   function guarda() { try { localStorage.setItem('emx-embudo', JSON.stringify(E)); } catch (e) {} }
   var TOTAL = 6, PASOS = $$('.paso');
   var TXT = { 0: 'Empezar el recorrido', 1: 'Siguiente: cómo viaja una venta', 2: 'Siguiente: haz tu cuenta', 3: 'Siguiente: el bot', 4: 'Siguiente: tu camino', 5: 'Ver cómo empezar' };
-  var CANDADO = { 1: 'Mira el video al 85 %. Quien termina esto, termina lo demás', 2: 'Toca los 4 pasos y responde. Vas bien, no te detengas', 3: 'Mueve al menos un número. El que hace su cuenta, no pierde plata', 4: 'Mira el video al 80 %. Ya pasaste la mitad', 5: 'Toca al menos 3 planetas. Estás a un paso del final' };
+  var CANDADO = { 1: 'Mira el video al 85 %. Quien termina esto, termina lo demás', 4: 'Mira el video al 80 %. Son 14 segundos, ya pasaste la mitad' };
   var TXT0 = 'Acepto el reto: empezar';
   function abierto(n) { return n === 0 || !!E.hecho[n]; }
-  function desbloquea(n) { if (E.hecho[n]) return; E.hecho[n] = true; guarda(); pinta(); }
+  function desbloquea(n) {
+    if (E.hecho[n]) return; E.hecho[n] = true; guarda(); pinta();
+    if (CANDADO[n] && E.paso === n) { // premio al terminar un video
+      var t = document.createElement('div'); t.className = 'ok-toast'; t.textContent = '✓ ¡Desbloqueado! Sigue'; document.body.appendChild(t);
+      setTimeout(function () { t.remove(); }, 2300);
+      var b = $('sig'); b.classList.remove('listo'); void b.offsetWidth; b.classList.add('listo');
+      try { navigator.vibrate && navigator.vibrate(40); } catch (e) {}
+    }
+  }
   function ir(n) {
     E.paso = Math.max(0, Math.min(TOTAL, n)); guarda();
+    reloj2.forEach(clearTimeout); clearInterval(reloj5);
     PASOS.forEach(function (p) { p.classList.toggle('on', +p.dataset.paso === E.paso); });
     $$('video').forEach(function (v) { if (!v.paused) v.pause(); });
     window.scrollTo(0, 0); pinta();
     if (E.paso === 1 || E.paso === 4) arma(E.paso);
+    if (E.paso === 2) historia(); if (E.paso === 3) { desbloquea(3); sube(); } if (E.paso === 5) gira();
   }
   function pinta() {
     var n = E.paso;
@@ -524,13 +551,29 @@ main{padding:22px 0 140px}
   }
 
   /* ---------- paso 2: las cartas y la pregunta ---------- */
-  var cartas = $$('#cartas .carta'), vistas = 0;
-  cartas.forEach(function (c) { c.addEventListener('click', function () { if (!c.classList.contains('vista')) { c.classList.add('vista'); vistas++; if (vistas === cartas.length) { $('preg2').hidden = false; setTimeout(function () { $('preg2').scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 200); } } }); });
-  if (E.hecho[2]) { cartas.forEach(function (c) { c.classList.add('vista'); }); $('preg2').hidden = false; }
+  // se cuenta sola: cada paso se enciende uno tras otro, sin tener que tocar
+  var cartas = $$('#cartas .carta'), reloj2 = [];
+  function historia() {
+    desbloquea(2);
+    reloj2.forEach(clearTimeout); reloj2 = [];
+    var quieto = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    cartas.forEach(function (c) { c.classList.remove('vista', 'aqui'); });
+    $('hilo2').querySelector('i').style.width = '0';
+    cartas.forEach(function (c, j) {
+      reloj2.push(setTimeout(function () {
+        cartas.forEach(function (o) { o.classList.remove('aqui'); });
+        c.classList.add('vista', 'aqui');
+        if (!quieto && c.getBoundingClientRect().bottom > innerHeight - 110) c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        $('hilo2').querySelector('i').style.width = ((j + 1) / cartas.length * 100) + '%';
+      }, quieto ? 0 : 400 + j * 1900));
+    });
+    reloj2.push(setTimeout(function () { cartas.forEach(function (o) { o.classList.remove('aqui'); }); $('preg2').hidden = false; }, quieto ? 0 : 400 + cartas.length * 1900));
+  }
+  cartas.forEach(function (c) { c.addEventListener('click', function () { reloj2.forEach(clearTimeout); cartas.forEach(function (o) { o.classList.add('vista'); o.classList.remove('aqui'); }); $('hilo2').querySelector('i').style.width = '100%'; $('preg2').hidden = false; }); });
   $$('#preg2 .opc button').forEach(function (b) {
     b.addEventListener('click', function () {
       var fb = $('preg2').querySelector('.fb');
-      if (b.dataset.r === 'si') { b.classList.add('bien'); fb.innerHTML = '<b>¡Exacto!</b> Paga en efectivo cuando recibe. Por eso se anima a comprar: no arriesga nada antes.'; desbloquea(2); }
+      if (b.dataset.r === 'si') { b.classList.add('bien'); fb.innerHTML = '<b>¡Exacto!</b> Paga en efectivo cuando recibe. Por eso se anima a comprar: no arriesga nada antes.'; }
       else { b.classList.remove('mal'); void b.offsetWidth; b.classList.add('mal'); fb.innerHTML = 'Casi. Recuerda el paso 4: <b>el cliente paga cuando ya tiene el producto en la mano.</b>'; }
     });
   });
@@ -542,25 +585,30 @@ main{padding:22px 0 140px}
     { k: 'envio', t: 'Envío', s: 'Lo que cobra la transportadora', min: 3, max: 12, v: 7, pre: '$' },
     { k: 'pub', t: 'Publicidad por pedido', s: 'Lo que pagas en anuncios por cada pedido', min: 1, max: 15, v: 5, pre: '$' },
     { k: 'ent', t: 'Pedidos que se entregan', s: 'De cada 100 pedidos, cuántos llegan y se cobran', min: 40, max: 95, v: 65, suf: ' de 100' }
-  ], V = {}, movido = false;
+  ], V = {}, ultimo = 0;
   var campos = $('campos');
   C.forEach(function (c) {
     V[c.k] = c.v;
     var d = document.createElement('div'); d.className = 'campo';
     d.innerHTML = '<label for="c-' + c.k + '">' + c.t + '</label><output id="o-' + c.k + '"></output><small>' + c.s + '</small><input type="range" id="c-' + c.k + '" min="' + c.min + '" max="' + c.max + '" step="1" value="' + c.v + '">';
     campos.appendChild(d);
-    d.querySelector('input').addEventListener('input', function (e) { V[c.k] = +e.target.value; calcula(); if (!movido) { movido = true; setTimeout(function () { desbloquea(3); }, 1200); } });
+    d.querySelector('input').addEventListener('input', function (e) { V[c.k] = +e.target.value; calcula(); });
   });
   function plata(x) { return (x < 0 ? '−$' : '$') + Math.abs(x).toFixed(2).replace('.', ','); }
   function calcula() {
     C.forEach(function (c) { $('o-' + c.k).textContent = (c.pre || '') + V[c.k] + (c.suf || ''); });
     var e = V.ent / 100, gana = V.precio - V.costo - V.envio, prom = e * gana - (1 - e) * V.envio - V.pub;
-    $('resN').textContent = plata(prom);
+    $('resN').textContent = plata(prom); ultimo = prom;
     $('res').classList.toggle('neg', prom < 0);
     $('resD').innerHTML = prom < 0 ? 'Con estos números <b>pierdes</b>: sube el precio, baja la publicidad o elige otro producto.' :
       'Cada venta entregada deja ' + plata(gana) + '. Pero de cada 100, ' + (100 - V.ent) + ' no se entregan y su envío se paga igual, y cada pedido cuesta ' + plata(V.pub) + ' de publicidad.';
   }
   calcula();
+  function sube() { // el resultado cuenta desde cero al entrar
+    var fin = ultimo, t0 = null;
+    function cuadro(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1100); $('resN').textContent = plata(fin * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(cuadro); }
+    requestAnimationFrame(cuadro);
+  }
 
   /* ---------- paso 5: los planetas ---------- */
   var PL = [
@@ -568,17 +616,24 @@ main{padding:22px 0 140px}
     ['Balanza', 'img3', 'Pones un precio que deja ganancia.', 'El Margen Fantasma'], ['Pantalla', 'img4', 'Dejas tus anuncios listos.', 'El Anuncio Invisible'],
     ['Circuito', 'img5', 'Instalas y pruebas tu bot.', 'El Chat Sin Contestar'], ['Fuego', 'img6', 'Lanzas tu primera campaña de prueba.', 'El Presupuesto Quemado'],
     ['Dorado', 'img7', 'Aprendes a operar y a crecer.', null], ['Automatización', 'img8', 'Claude trabaja contigo. Es el planeta del plan Pro.', null]
-  ], tocados = {};
+  ], reloj5 = null;
   var gal = $('galaxia');
+  function elige(i) {
+    var bs = $$('#galaxia button'), p = PL[i];
+    bs.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+    bs[i].setAttribute('aria-pressed', 'true'); bs[i].classList.add('vista');
+    var d = $('planetaD'); d.classList.remove('cambia'); void d.offsetWidth; d.classList.add('cambia');
+    d.innerHTML = '<h3>' + (i + 1) + ' · Planeta ' + p[0] + (i === 0 ? ' <em>(gratis)</em>' : '') + '</h3><p>Sales de aquí cuando: <b>' + p[2] + '</b>' + (p[3] ? ' El jefe que vences: <b>' + p[3] + '</b>.' : '') + '</p>';
+  }
+  function gira() { // los planetas se encienden solos, uno tras otro
+    desbloquea(5); clearInterval(reloj5);
+    var i = 0; elige(0);
+    reloj5 = setInterval(function () { i++; if (i >= PL.length) { clearInterval(reloj5); return; } elige(i); }, 2200);
+  }
   PL.forEach(function (p, i) {
     var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-pressed', 'false');
     b.innerHTML = (i === 0 ? '<span class="gr">GRATIS</span>' : '') + '<img class="px" src="img/' + p[1] + '.webp" alt="" width="64" height="64">' + (i + 1) + ' · ' + p[0];
-    b.addEventListener('click', function () {
-      $$('#galaxia button').forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
-      b.setAttribute('aria-pressed', 'true'); b.classList.add('vista'); tocados[i] = 1;
-      $('planetaD').innerHTML = '<h3>' + (i + 1) + ' · Planeta ' + p[0] + (i === 0 ? ' <em>(gratis)</em>' : '') + '</h3><p>Sales de aquí cuando: <b>' + p[2] + '</b>' + (p[3] ? ' El jefe que vences: <b>' + p[3] + '</b>.' : '') + '</p>';
-      if (Object.keys(tocados).length >= 3) desbloquea(5);
-    });
+    b.addEventListener('click', function () { clearInterval(reloj5); elige(i); });
     gal.appendChild(b);
   });
 
