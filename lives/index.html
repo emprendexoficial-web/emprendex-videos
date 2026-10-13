@@ -96,6 +96,14 @@ section{display:grid;gap:16px}
 .no{display:none;border:1px dashed var(--ambar);border-radius:12px;padding:10px 12px;color:#FBE3B5;font-size:.92rem}
 .no.si{display:block}
 .estado{font-size:.86rem;color:var(--dim);text-align:center}
+.proceso,.guion{margin:0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:n}
+.proceso li,.guion li{counter-increment:n;display:grid;grid-template-columns:40px 1fr;column-gap:12px;align-items:start;padding:14px;border-radius:var(--r-lg);border:1.5px solid var(--edge);background:var(--ink-1)}
+.proceso li::before,.guion li::before{content:counter(n);grid-row:span 2;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--marca);color:var(--marca-ink);font-family:var(--display);font-weight:900;font-size:1.15rem}
+.proceso b,.guion b{font-family:var(--display);font-weight:800;font-size:1.08rem;line-height:1.2}
+.proceso span,.guion span{grid-column:2;color:var(--mut);font-size:.94rem}
+.guion small{font-family:var(--mono);font-size:.68rem;font-weight:700;color:var(--ambar);margin-left:6px}
+.guion li{grid-template-columns:40px 1fr}
+.guion li>b{grid-column:2}
 .pie{position:fixed;left:0;right:0;bottom:0;z-index:15;background:linear-gradient(transparent,rgba(5,5,6,.96) 30%);padding:18px 0 calc(12px + env(safe-area-inset-bottom,0px));transition:transform .3s var(--ease)}
 .pie.oculto{transform:translateY(120%)}
 @media (max-width:340px){.tel{width:108px;height:168px}.tel img{width:74px;height:74px;margin-left:-37px}}
@@ -146,6 +154,30 @@ section{display:grid;gap:16px}
     <ul><li>Te da miedo hablar frente a la cámara.</li><li>Buscas algo sin esforzarte: aquí ganas vendiendo.</li><li>No tienes laptop o computadora, ni iPhone.</li></ul>
   </section>
 
+  <section>
+    <p class="k">Así es el proceso</p>
+    <h2>4 pasos, <em>como en una empresa.</em></h2>
+    <ol class="proceso">
+      <li><b>Postulas aquí</b><span>1 minuto. Le llega a Samantha por WhatsApp.</span></li>
+      <li><b>Envías tu video de prueba</b><span>Máximo 90 segundos, grabado con tu iPhone. Abajo te digo qué decir.</span></li>
+      <li><b>Live de prueba de 15 minutos</b><span>Con Samantha haciendo de cliente. Así vemos cómo respondes en vivo.</span></li>
+      <li><b>Firmas tu contrato y empiezas</b><span>Recibes el material, los enlaces y tu código de vendedor.</span></li>
+    </ol>
+  </section>
+
+  <section class="prueba">
+    <p class="k">Tu video de prueba</p>
+    <h2>Véndenos el bot <em>en 90 segundos.</em></h2>
+    <p class="lead">Grábalo en vertical, de una sola toma, sin filtros ni edición, mirando a la cámara y con buena luz.</p>
+    <ol class="guion">
+      <li><b>Preséntate <small>10 s</small></b><span>Tu nombre, tu ciudad y por qué eres buena o bueno vendiendo.</span></li>
+      <li><b>Vende como en un live <small>45 s</small></b><span>Con estos datos: «El bot de EmprendeX atiende tu WhatsApp las 24 horas, contesta a todos a la vez y le vuelve a escribir a quien no compró. El plan Vendedor cuesta $59 al mes, sin permanencia.»</span></li>
+      <li><b>Responde una objeción <small>20 s</small></b><span>Un cliente escribe: «Está muy caro». ¿Qué le dices?</span></li>
+      <li><b>Cierra la venta <small>10 s</small></b><span>Pide la acción: que le escriban a Samantha por WhatsApp.</span></li>
+    </ol>
+    <p class="chica">Si ya hiciste lives, manda también el enlace de uno. Envía el video por WhatsApp a Samantha después de postular.</p>
+  </section>
+
   <section class="form" id="postula">
     <p class="k">Postula en 1 minuto</p>
     <h2>Cuéntanos <em>de ti.</em></h2>
@@ -192,7 +224,7 @@ section{display:grid;gap:16px}
     var t = 'Hola Samantha 👋 Quiero postular para hacer lives de EmprendeX.\n\n' +
       '• Nombre: ' + nom + '\n• Ciudad: ' + ciu + '\n• Laptop o computadora: Sí\n• iPhone: Sí' + ($('mod').value.trim() ? ' (' + $('mod').value.trim() + ')' : '') +
       ($('exp').value ? '\n• Experiencia: ' + $('exp').value : '') + (hor.length ? '\n• Puedo hacer lives: ' + hor.join(', ') : '') +
-      ($('tt').value.trim() ? '\n• Mi red: ' + $('tt').value.trim() : '') + '\n\n¿Me cuentas los detalles?' + (ORIGEN ? ' (vengo de ' + ORIGEN + ')' : '');
+      ($('tt').value.trim() ? '\n• Mi red: ' + $('tt').value.trim() : '') + '\n\nEn seguida te envío mi video de prueba. ¿Me cuentas los detalles?' + (ORIGEN ? ' (vengo de ' + ORIGEN + ')' : '');
     b.href = 'https://wa.me/' + NUM + '?text=' + encodeURIComponent(t);
     b.removeAttribute('aria-disabled'); b.style.opacity = ''; $('estado').textContent = '¡Listo! Toca el botón y envía el mensaje en WhatsApp.';
   }
