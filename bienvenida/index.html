@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bienvenido a EmprendeX</title>
+<meta name="description" content="Tus primeros pasos en EmprendeX: grupos, plataforma, Dropi, clases y talleres.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#050506">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23050506'/%3E%3Cpolygon points='14,14 39,14 50,39 61,14 86,14 61,50 86,86 61,86 50,61 39,86 14,86 39,50' fill='%23A3E635'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#050506;--ink-1:#0C0C0E;--ink-2:#141416;--ink-3:#1D1D20;--edge:#2E2E33;--edge-soft:#1F1F23;
+  --txt:#F6F4F0;--mut:#A9A49C;--dim:#77726B;--marca:#A3E635;--marca-2:#BEF264;--marca-ink:#1A2605;
+  --coral:#FF5D4E;--ambar:#F5B83D;--wa:#25D366;--wa-ink:#04210F;
+  --display:'Outfit','Avenir Next','Segoe UI',Arial,sans-serif;--body:'Space Grotesk','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono',ui-monospace,'Courier New',monospace;
+  --r:14px;--r-lg:22px;--ease:cubic-bezier(.16,1,.3,1);--canal:16px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--txt);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;
+  background-image:radial-gradient(60% 40% at 85% 0%,rgba(163,230,53,.12),transparent 70%),radial-gradient(50% 35% at 0% 100%,rgba(163,230,53,.06),transparent 70%)}
+img,video{max-width:100%;display:block}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--marca-2);outline-offset:3px;border-radius:8px}
+.cont{max-width:660px;margin-inline:auto;padding:0 max(var(--canal),env(safe-area-inset-left,0px)) 0 max(var(--canal),env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.3rem,10.5vw,3.6rem);line-height:.95;font-weight:900;text-transform:uppercase}
+h2{font-size:clamp(1.5rem,6.6vw,2.1rem)}
+h3{font-size:1.12rem}
+em{font-style:normal;color:var(--marca)}
+p{margin:0}
+.k{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--marca)}
+.mut{color:var(--mut)}
+.chica{font-size:.86rem;color:var(--dim)}
+.lead{font-size:1.08rem;color:var(--mut);line-height:1.5}
+.lead b{color:var(--txt)}
+/* barra */
+.barra{position:sticky;top:0;z-index:20;background:rgba(5,5,6,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--edge-soft)}
+.barra .cont{display:flex;align-items:center;justify-content:space-between;gap:12px;height:54px}
+.logo{display:inline-flex;align-items:center;gap:4px;font-family:var(--display);font-weight:800;font-size:1.02rem}
+.logo i{display:block;width:26px;height:26px;background:linear-gradient(135deg,var(--marca) 0 50%,#4d8f1a 50%);clip-path:polygon(0 0,35% 0,50% 35%,65% 0,100% 0,65% 50%,100% 100%,65% 100%,50% 65%,35% 100%,0 100%,35% 50%)}
+.prog{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--mut)}
+.prog b{color:var(--marca)}
+.linea{height:4px;background:var(--edge);position:relative}
+.linea i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--marca);box-shadow:0 0 12px var(--marca);transition:width .6s var(--ease)}
+main{padding:26px 0 80px;display:grid;gap:30px}
+/* portada */
+.heroe{display:grid;gap:14px;text-align:left}
+.sello{justify-self:start;font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--marca);color:var(--marca-ink);padding:6px 10px;border-radius:6px}
+.frase{border-left:4px solid var(--marca);padding:6px 0 6px 14px;font-family:var(--display);font-weight:800;font-size:1.25rem;line-height:1.25;min-height:3.2em;transition:opacity .4s}
+.obra{border:1.5px solid var(--ambar);background:rgba(245,184,61,.08);border-radius:var(--r);padding:14px 16px;display:grid;gap:6px}
+.obra b{color:var(--ambar)}
+.video{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--edge);background:#000;aspect-ratio:9/16;max-height:72vh;margin-inline:auto;width:min(100%,calc(72vh*9/16))}
+@supports (height:100svh){.video{max-height:72svh;width:min(100%,calc(72svh*9/16))}}
+.video video{width:100%;height:100%;object-fit:contain}
+.video button{position:absolute;inset:0;border:0;background:center/cover no-repeat;display:grid;place-items:center}
+.video button span{width:84px;height:84px;border-radius:50%;background:var(--marca);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(163,230,53,.22)}
+.video button svg{width:34px;height:34px;margin-left:5px;color:var(--marca-ink)}
+/* pasos */
+.mapa{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.mapa a{display:grid;place-items:center;height:42px;border-radius:10px;border:1.5px solid var(--edge);background:var(--ink-1);font-family:var(--display);font-weight:800;text-decoration:none;color:var(--mut);transition:all .3s}
+.mapa a.ok{background:var(--marca);border-color:var(--marca);color:var(--marca-ink)}
+.paso{border:1.5px solid var(--edge);border-radius:var(--r-lg);background:var(--ink-1);padding:18px 16px;display:grid;gap:14px;scroll-margin-top:72px;transition:border-color .4s,background .4s}
+.paso.hecho{border-color:var(--marca);background:linear-gradient(180deg,rgba(163,230,53,.08),var(--ink-1) 50%)}
+.cab{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center}
+.cab .n{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--ink-3);color:var(--txt);font-family:var(--display);font-weight:900;font-size:1.6rem;transition:all .4s}
+.paso.hecho .cab .n{background:var(--marca);color:var(--marca-ink)}
+.cab small{display:block;font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--marca)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:56px;padding:13px 20px;border-radius:var(--r);border:0;background:var(--marca);color:var(--marca-ink);font-family:var(--display);font-weight:800;font-size:1.08rem;line-height:1.1;text-decoration:none;text-align:center;transition:transform .2s var(--ease),opacity .3s}
+.btn:active{transform:scale(.98)}
+.btn.wa{background:var(--wa);color:var(--wa-ink)}
+.btn.sec{background:transparent;color:var(--txt);border:1.5px solid var(--edge)}
+.btn svg{width:22px;height:22px;flex:none}
+.btn[aria-disabled="true"]{background:var(--ink-3);color:var(--dim);pointer-events:none}
+.hecho-btn{justify-self:start;display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:10px 16px;border-radius:999px;border:1.5px dashed var(--edge);background:transparent;font-weight:700;color:var(--mut)}
+.hecho-btn::before{content:"";width:20px;height:20px;border-radius:6px;border:2px solid var(--mut)}
+.paso.hecho .hecho-btn{border-style:solid;border-color:var(--marca);color:var(--marca-2)}
+.paso.hecho .hecho-btn::before{background:var(--marca);border-color:var(--marca);content:"✓";color:var(--marca-ink);display:grid;place-items:center;font-size:.8rem;font-weight:900}
+.pasitos{margin:0;padding:0;list-style:none;display:grid;gap:8px;counter-reset:p}
+.pasitos li{counter-increment:p;display:grid;grid-template-columns:30px 1fr;gap:10px;color:var(--mut)}
+.pasitos li::before{content:counter(p);width:30px;height:30px;border-radius:9px;background:var(--ink-3);color:var(--txt);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:.9rem}
+.pasitos b{color:var(--txt)}
+.ojo{border-radius:var(--r);padding:12px 14px;background:rgba(245,184,61,.08);border:1px solid rgba(245,184,61,.5);color:#FBE3B5;font-size:.95rem}
+.ojo b{color:var(--ambar)}
+.beneficios{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.beneficios div{border-radius:var(--r);padding:12px;background:rgba(163,230,53,.08);border:1px solid rgba(163,230,53,.35);font-family:var(--display);font-weight:800;line-height:1.15}
+.beneficios small{display:block;font-family:var(--body);font-weight:500;color:var(--mut);font-size:.82rem;margin-top:4px}
+.form{display:grid;gap:10px}
+.form label{font-weight:700;font-size:.95rem}
+.form input,.form select{width:100%;min-height:52px;padding:12px 14px;border-radius:12px;border:1.5px solid var(--edge);background:var(--ink-2);font-size:16px}
+.form input:focus,.form select:focus{border-color:var(--marca);outline:none}
+.taller{border:1px solid var(--edge);border-radius:var(--r);background:var(--ink-2);padding:14px;display:grid;gap:10px}
+.taller .t{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+.taller .t i{width:36px;height:36px;border-radius:10px;background:var(--marca);color:var(--marca-ink);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-style:normal}
+.taller .t span{color:var(--mut);font-size:.92rem}
+.clave{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px dashed var(--edge);border-radius:12px;padding:8px 8px 8px 12px}
+.clave code{font-family:var(--mono);font-weight:700;font-size:1.05rem;color:var(--marca-2);letter-spacing:.05em}
+.clave button{min-height:40px;padding:8px 12px;border-radius:10px;border:1.5px solid var(--marca);background:transparent;color:var(--marca);font-weight:700;white-space:nowrap}
+.clave button.ok{background:var(--marca);color:var(--marca-ink)}
+.grupo-t{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ambar);margin-top:4px}
+.dudas{display:grid;gap:10px}
+.duda{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;border:1px solid var(--edge);border-radius:var(--r);padding:12px;background:var(--ink-1)}
+.duda i{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--ink-3);font-family:var(--display);font-weight:900;font-style:normal;color:var(--marca)}
+.duda b{display:block;font-family:var(--display)}
+.duda span{color:var(--mut);font-size:.92rem}
+.final{border:2px solid var(--marca);border-radius:var(--r-lg);padding:20px 16px;background:rgba(163,230,53,.08);display:none;gap:10px;text-align:center}
+.final.si{display:grid;animation:aparece .6s var(--ease)}
+@keyframes aparece{from{opacity:0;transform:scale(.95)}}
+.candado{border:1.5px solid var(--coral);background:rgba(255,93,78,.07);border-radius:var(--r);padding:14px;display:grid;gap:10px}
+.candado b{color:#FFC9C3}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;background:var(--marca);color:var(--marca-ink);font-family:var(--display);font-weight:800;padding:12px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.45);max-width:calc(100% - 32px);text-align:center;animation:toast 2.8s var(--ease) both;pointer-events:none}
+@keyframes toast{0%{opacity:0;transform:translate(-50%,12px)}10%,85%{opacity:1;transform:translate(-50%,0)}100%{opacity:0}}
+#confeti{position:fixed;inset:0;pointer-events:none;z-index:50}
+@media (max-width:350px){.beneficios{grid-template-columns:1fr}.mapa a{height:38px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="iwa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.47 9.47 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.4 9.4 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.53A11.32 11.32 0 0 0 12.04.63C5.76.63.65 5.74.65 12.02c0 2.01.52 3.97 1.52 5.7L.55 23.62l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.18-5.9-3.33-8.05z"/></symbol>
+  <symbol id="iplay" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></symbol>
+  <symbol id="iir" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4 10 14M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+</svg>
+<canvas id="confeti"></canvas>
+
+<header class="barra">
+  <div class="cont"><span class="logo">EMPRENDE<i></i></span><span class="prog"><span id="progT"><b>0</b> de 6 pasos</span></span></div>
+  <div class="linea"><i id="progL"></i></div>
+</header>
+
+<main class="cont">
+  <section class="heroe">
+    <span class="sello">Ya eres parte de EmprendeX</span>
+    <h1>¡Felicidades por <em>tomar acción!</em></h1>
+    <p class="frase" id="frase">La mayoría solo mira. Tú decidiste empezar, y eso ya te pone por delante.</p>
+    <p class="lead">Bienvenido a la comunidad. Aquí tienes <b>todo lo que debes hacer, en orden</b>. Sigue los 6 pasos, márcalos al terminar y tu avance se guarda en este teléfono.</p>
+    <div class="obra"><p><b>La Academia está en construcción.</b> Mientras tanto, tienes <b>talleres completos</b> con los que puedes hacer todo el dropshipping automático (paso 6).</p></div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <p class="k">Mira primero este video · 1 minuto</p>
+    <div class="video" id="video"><button type="button" aria-label="Ver el video de bienvenida" style="background-image:url(bienvenida.jpg)"><span><svg aria-hidden="true"><use href="#iplay"/></svg></span></button></div>
+  </section>
+
+  <div class="candado" id="candado" hidden>
+    <p><b>Abre esta página con el enlace completo que te envió Samantha.</b> Así se ven los enlaces de los grupos y de los talleres.</p>
+    <a class="btn wa" data-wa="Hola Samantha 👋 Ya soy parte de EmprendeX. ¿Me envías el enlace completo de la página de bienvenida?" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#iwa"/></svg>Pedirle el enlace a Samantha</a>
+  </div>
+
+  <nav class="mapa" aria-label="Pasos"><a href="#p1">1</a><a href="#p2">2</a><a href="#p3">3</a><a href="#p4">4</a><a href="#p5">5</a><a href="#p6">6</a></nav>
+
+  <!-- PASO 1 -->
+  <section class="paso" id="p1" data-paso="1">
+    <div class="cab"><span class="n">1</span><div><small>Paso 1 · 1 minuto</small><h2>Únete al grupo VIP</h2></div></div>
+    <p class="mut">Es el grupo de la comunidad: ahí se resuelven las dudas entre todos.</p>
+    <a class="btn wa" data-s="vip" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iwa"/></svg>Unirme al grupo VIP</a>
+    <button class="hecho-btn" type="button">Ya me uní</button>
+  </section>
+
+  <!-- PASO 2 -->
+  <section class="paso" id="p2" data-paso="2">
+    <div class="cab"><span class="n">2</span><div><small>Paso 2 · 1 minuto</small><h2>Únete al grupo del bot y las herramientas</h2></div></div>
+    <p class="mut">Aquí se habla del bot de WhatsApp y de las herramientas de la plataforma.</p>
+    <a class="btn wa" data-s="bot" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iwa"/></svg>Unirme al grupo del bot</a>
+    <button class="hecho-btn" type="button">Ya me uní</button>
+  </section>
+
+  <!-- PASO 3 -->
+  <section class="paso" id="p3" data-paso="3">
+    <div class="cab"><span class="n">3</span><div><small>Paso 3 · 3 minutos</small><h2>Crea tu cuenta en la plataforma</h2></div></div>
+    <ol class="pasitos">
+      <li><span><b>Regístrate en la plataforma EmprendeX</b> con tu correo.</span></li>
+      <li><span><b>Escríbele a Samantha</b>, mi mano derecha, con ese correo y el plan que pagaste. Ella te da el acceso.</span></li>
+    </ol>
+    <a class="btn sec" href="https://www.emprendexpro.com" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#iir"/></svg>Abrir la plataforma EmprendeX</a>
+    <div class="form">
+      <label for="correo">El correo con el que te registraste</label>
+      <input type="email" id="correo" autocomplete="email" placeholder="tucorreo@gmail.com" inputmode="email">
+      <label for="plan">El plan que pagaste</label>
+      <select id="plan"><option value="">Elige tu plan</option><option>Vendedor con Academia ($59)</option><option>Pro ($109)</option><option>Solo el bot ($49)</option></select>
+      <a class="btn wa" id="samantha" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iwa"/></svg>Enviar a Samantha (0968275952)</a>
+      <p class="chica" id="samanthaE">Escribe tu correo y elige tu plan para activar el botón.</p>
+    </div>
+    <button class="hecho-btn" type="button">Ya le escribí a Samantha</button>
+  </section>
+
+  <!-- PASO 4 -->
+  <section class="paso" id="p4" data-paso="4">
+    <div class="cab"><span class="n">4</span><div><small>Paso 4 · 5 minutos</small><h2>Crea tu cuenta de Dropi conmigo</h2></div></div>
+    <p class="mut">Dropi es la plataforma de los proveedores: ahí están los productos y ahí generas los pedidos. Regístrate con mi enlace para ser parte de la comunidad EmprendeX dentro de Dropi.</p>
+    <div class="beneficios">
+      <div>Sin pagar comisiones<small>Por ser de la comunidad EmprendeX</small></div>
+      <div>Sin recargar la plataforma<small>Para generar tus pedidos</small></div>
+    </div>
+    <ol class="pasitos">
+      <li><span><b>Hazlo de preferencia en una computadora.</b> El registro es más fácil y ves todo completo.</span></li>
+      <li><span><b>Abre mi enlace:</b> app.dropi.ec/emprendex</span></li>
+      <li><span><b>Llena tus datos.</b> En el número de teléfono, escríbelo <b>con el 0 al inicio</b>.</span></li>
+      <li><span><b>Termina el registro</b> y entra a tu cuenta.</span></li>
+    </ol>
+    <div class="ojo"><b>Ojo con el teléfono:</b> escribe tu número completo, con el cero al inicio. Ejemplo: <b>0991234567</b>.</div>
+    <a class="btn" href="http://app.dropi.ec/emprendex" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#iir"/></svg>Crear mi cuenta de Dropi</a>
+    <button class="btn sec" type="button" id="copiaDropi">Copiar el enlace para abrirlo en la computadora</button>
+    <button class="hecho-btn" type="button">Ya creé mi cuenta de Dropi</button>
+  </section>
+
+  <!-- PASO 5 -->
+  <section class="paso" id="p5" data-paso="5">
+    <div class="cab"><span class="n">5</span><div><small>Paso 5 · tus clases</small><h2>Entra a mi Skool · Grupo 7</h2></div></div>
+    <ol class="pasitos">
+      <li><span><b>Entra a Skool</b> con el botón de abajo y únete a la comunidad.</span></li>
+      <li><span>Ve a la sección llamada <b>«Grupo 7»</b>.</span></li>
+      <li><span>Mira <b>todas las clases</b> en orden, <b>menos la de crear campañas</b>: eso lo ves en los talleres del paso 6, que están actualizados.</span></li>
+    </ol>
+    <a class="btn" href="https://www.skool.com/emprendex-3k-1447/about?ref=49b94ef4153a448e8ddf00dd8cfa578e" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#iir"/></svg>Entrar a Skool</a>
+    <button class="hecho-btn" type="button">Ya entré al Grupo 7</button>
+  </section>
+
+  <!-- PASO 6 -->
+  <section class="paso" id="p6" data-paso="6">
+    <div class="cab"><span class="n">6</span><div><small>Paso 6 · 5 horas</small><h2>Mira los 4 talleres</h2></div></div>
+    <p class="mut"><b style="color:var(--txt)">5 horas de dropshipping actualizado.</b> Te sirven si usas el bot y también si vendes manual. Míralos en orden.</p>
+    <div class="ojo"><b>Las claves:</b> cópialas tal cual, con sus símbolos. Usa el botón «Copiar» para no equivocarte.</div>
+    <p class="grupo-t">Si tienes el bot</p>
+    <div class="taller"><div class="t"><i>1</i><div><h3>Lanzamiento de la plataforma</h3></div></div><div class="clave"><code data-k="0">••••••••</code><button type="button" data-copia="0">Copiar clave</button></div><a class="btn sec" data-t="0" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iir"/></svg>Ver el taller 1</a></div>
+    <div class="taller"><div class="t"><i>2</i><div><h3>Configuración del bot</h3></div></div><div class="clave"><code data-k="1">••••••••</code><button type="button" data-copia="1">Copiar clave</button></div><a class="btn sec" data-t="1" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iir"/></svg>Ver el taller 2</a></div>
+    <p class="grupo-t">Para todos (con bot o manual)</p>
+    <div class="taller"><div class="t"><i>3</i><div><h3>Investigar y elegir producto</h3><span>Investigar el mercado, analizar la competencia y buscar videos para testear.</span></div></div><div class="clave"><code data-k="2">••••••••</code><button type="button" data-copia="2">Copiar clave</button></div><a class="btn sec" data-t="2" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iir"/></svg>Ver el taller 3</a></div>
+    <div class="taller"><div class="t"><i>4</i><div><h3>Vender y escalar</h3><span>Cómo funciona Meta hoy, la nueva forma de testear, cómo escalar, conectar Claude para que analice tus campañas, seguimiento automático y tips para evitar devoluciones viendo el historial del cliente.</span></div></div><div class="clave"><code data-k="3">••••••••</code><button type="button" data-copia="3">Copiar clave</button></div><a class="btn sec" data-t="3" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iir"/></svg>Ver el taller 4</a></div>
+    <button class="hecho-btn" type="button">Ya empecé los talleres</button>
+  </section>
+
+  <section class="final" id="final">
+    <p class="k">6 de 6 pasos</p>
+    <h2>¡Lo lograste! <em>Ya tienes todo.</em></h2>
+    <p class="mut">Ahora toca practicar: mira los talleres en orden y aplica cada paso en tu propio negocio. Los que llegan lejos son los que no se detienen.</p>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <p class="k">¿Tienes dudas?</p>
+    <h2>Así resuelves <em>cualquier pregunta</em></h2>
+    <div class="dudas">
+      <div class="duda"><i>1</i><div><b>El asistente de la plataforma</b><span>Tu bot asistente te ayuda con las preguntas más complejas.</span></div></div>
+      <div class="duda"><i>2</i><div><b>El grupo VIP</b><span>Si aún no se resuelve, pregúntalo en el grupo: la comunidad te ayuda.</span></div></div>
+      <div class="duda"><i>3</i><div><b>Samantha</b><span>Para tu acceso a la plataforma: 0968275952.</span></div></div>
+    </div>
+    <p class="chica">Guarda esta página: aquí siempre vas a encontrar tus enlaces y las claves de los talleres.</p>
+  </section>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var NUM = '593968275952';
+  var PAYLOAD = {"iv":"CZKJWjqlbN93eRLa","ct":"jO1Eq2VtOlah+0CJr+ySODWQ1NDLOIFpfNKVDXV0+oEA9eNGfY5iGNbygKewgiDm+2qEiRy5WXVXoJwTWlL6BCPSqWUA1xtpKSk7QKKoAJEZBudTzIP5WnQKMfn/BPxqX1c/6Trb02JNUHq4009TAAR5A+VT10ogpYxsniksAIxSXgB7OEvj3FpL37epnByXSjqJ0U1y4ugPYSFq/jM9Q2AgHENhMBD3RwQKq/einVUkvd7T9OidbHPWB5ajrgsRsku6yp/vGVJ1SHGLFF6hs8m9b21BbFDdX1q6JeY9DHY51uoipr21onk1Za+rsJOhPSimbQUIJn+ayTRUPFjprIaBuAkkrKi6Ohweq6h2bmG7Fvij8HeV3IPoLRj6t9d8ORv1csdwUTwBDJU7/qgHvysCps58bEgubcW+z4Qs7xuhfHqp/lIaofbguq2tOJTqt4oFu9SlikejCyuefiV6eJ30yWToV4aEbmcwC50l4Kn2hrIkWBMIwabrO+GxoCMjZIdKXtjclo46HcE+Bd4n+joeJfLWE0+KQWQHAAopN/xbO6nAJNEZ2ub/jB86YkvF5aYK8m7CCeVI2YM27w2sRSwwyE8wnXeR97huh12kYuQjehjg7E8pOQuW2toUy9hN6pTT+f3kTpnvFxziZranFNp0fhJMCaN5tydf4Bn9iQRPpITO44s3yxTYIxYfN+TB+6s6od2afZdJN9/Jf0UAbGbcfJgKq/OaLwODZ/S4VoQiPQ2Tq7NKqxIM5K4jXwjWuFh+hSRBun4PjGK4XOCo0stMXgwFu9ue77GQgZE72p6M2LFSgngKwz0cZKMn3c6wOrxIjYqQ8z/Lsh/G4ZpRfilGOkc/1/7fZlabxipbvYO6T2jIxbYV5hvALH9l97ndEzd3GQsBZO+lbE5C2hW9ZaE/35Eip9Qxp0cxScY6haFp44+Pzuh9MHw+w7/wo6iJasr45Pci4g4ec880/KpR20mO8AOG0BTMloVmgYwoIJpVJO0="};
+  function $(id) { return document.getElementById(id); }
+  function $$(s) { return Array.prototype.slice.call(document.querySelectorAll(s)); }
+  $$('[data-wa]').forEach(function (a) { a.href = 'https://wa.me/' + NUM + '?text=' + encodeURIComponent(a.dataset.wa); });
+
+  /* frases que motivan, cambian solas */
+  var FRASES = ['La mayoría solo mira. Tú decidiste empezar, y eso ya te pone por delante.', 'No necesitas saberlo todo hoy: solo dar el siguiente paso.', 'Cada paso que marcas aquí es un paso más cerca de tu primera venta.', 'La constancia le gana al talento. Termina lo que empiezas.'];
+  var fi = 0; setInterval(function () { var f = $('frase'); f.style.opacity = 0; setTimeout(function () { fi = (fi + 1) % FRASES.length; f.textContent = FRASES[fi]; f.style.opacity = 1; }, 400); }, 6000);
+
+  /* mensajes al completar cada paso */
+  var ANIMO = { 1: '¡Eso! Ya eres parte de la comunidad 🙌', 2: '¡Bien! Ya estás donde se habla del bot 🤖', 3: '¡Perfecto! Samantha te activa el acceso 🚀', 4: '¡Excelente! Ya tienes tu Dropi sin comisiones 📦', 5: '¡Vas con todo! Ahora a las clases del Grupo 7 🎓', 6: '¡Lo lograste! Ya tienes todo para empezar 🏆' };
+  function aviso(t) { var d = document.createElement('div'); d.className = 'toast'; d.textContent = t; document.body.appendChild(d); setTimeout(function () { d.remove(); }, 2900); }
+
+  /* avance guardado en este teléfono */
+  var H = {}; try { H = JSON.parse(localStorage.getItem('emx-bienvenida') || '{}') || {}; } catch (e) {}
+  function guarda() { try { localStorage.setItem('emx-bienvenida', JSON.stringify(H)); } catch (e) {} }
+  function pinta() {
+    var n = 0;
+    $$('.paso').forEach(function (p) { var k = p.dataset.paso, si = !!H[k]; p.classList.toggle('hecho', si); if (si) n++; });
+    $$('.mapa a').forEach(function (a, i) { a.classList.toggle('ok', !!H[i + 1]); });
+    $('progT').innerHTML = '<b>' + n + '</b> de 6 pasos'; $('progL').style.width = (n / 6 * 100) + '%';
+    $('final').classList.toggle('si', n === 6);
+    return n;
+  }
+  $$('.hecho-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var p = b.closest('.paso'), k = p.dataset.paso; H[k] = !H[k]; guarda(); var n = pinta();
+      if (H[k]) {
+        aviso(ANIMO[k]); try { navigator.vibrate && navigator.vibrate(30); } catch (e) {}
+        if (n === 6) { confeti(); $('final').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        else { var sig = document.querySelector('.paso:not(.hecho)'); if (sig) setTimeout(function () { sig.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 700); }
+      }
+    });
+  });
+  pinta();
+
+  /* video */
+  $('video').querySelector('button').addEventListener('click', function () {
+    var v = document.createElement('video'); v.src = 'bienvenida.mp4'; v.poster = 'bienvenida.jpg'; v.controls = true; v.playsInline = true; v.setAttribute('playsinline', '');
+    $('video').innerHTML = ''; $('video').appendChild(v); var p = v.play(); if (p && p.catch) p.catch(function () {});
+  });
+
+  /* paso 3: mensaje para Samantha */
+  function armaSam() {
+    var c = $('correo').value.trim(), pl = $('plan').value, b = $('samantha'), ok = /.+@.+\..+/.test(c) && pl;
+    b.setAttribute('aria-disabled', ok ? 'false' : 'true');
+    $('samanthaE').textContent = ok ? '¡Listo! Toca el botón y envía el mensaje.' : 'Escribe tu correo y elige tu plan para activar el botón.';
+    if (ok) b.href = 'https://wa.me/' + NUM + '?text=' + encodeURIComponent('Hola Samantha 👋 Ya soy parte de EmprendeX.\n\n• Plan que pagué: ' + pl + '\n• Correo con el que me registré en la plataforma: ' + c + '\n\n¿Me activas el acceso, por favor? ¡Gracias!');
+  }
+  $('correo').addEventListener('input', armaSam); $('plan').addEventListener('change', armaSam);
+
+  /* copiar */
+  function copia(txt, btn, etiqueta) {
+    function bien() { if (btn) { btn.textContent = '✓ Copiado'; btn.classList.add('ok'); setTimeout(function () { btn.textContent = etiqueta; btn.classList.remove('ok'); }, 2000); } }
+    function viejo() { var a = document.createElement('textarea'); a.value = txt; a.style.position = 'fixed'; a.style.opacity = '0'; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); bien(); } catch (e) {} a.remove(); }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(bien, viejo); else viejo();
+  }
+  $('copiaDropi').addEventListener('click', function () { copia('http://app.dropi.ec/emprendex', this, 'Copiar el enlace para abrirlo en la computadora'); });
+
+  /* enlaces privados: se abren con la llave que trae el enlace (#k=...) */
+  function b64(s) { s = s.replace(/-/g, '+').replace(/_/g, '/'); while (s.length % 4) s += '='; var r = atob(s), u = new Uint8Array(r.length); for (var i = 0; i < r.length; i++) u[i] = r.charCodeAt(i); return u; }
+  var m = (location.hash || '').match(/k=([A-Za-z0-9_-]+)/);
+  try { if (m) localStorage.setItem('emx-bienvenida-k', m[1]); else { var g = localStorage.getItem('emx-bienvenida-k'); if (g) m = [0, g]; } } catch (e) {}
+  function cerrado() { $('candado').hidden = false; }
+  if (!m || !window.crypto || !crypto.subtle) { cerrado(); }
+  else {
+    crypto.subtle.importKey('raw', b64(m[1]), 'AES-GCM', false, ['decrypt']).then(function (k) {
+      return crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(PAYLOAD.iv) }, k, b64(PAYLOAD.ct));
+    }).then(function (buf) {
+      var D = JSON.parse(new TextDecoder().decode(buf));
+      function abre(a, url) { a.href = url; a.setAttribute('aria-disabled', 'false'); }
+      $$('[data-s="vip"]').forEach(function (a) { abre(a, D.vip); });
+      $$('[data-s="bot"]').forEach(function (a) { abre(a, D.bot); });
+      D.talleres.forEach(function (t, i) {
+        abre(document.querySelector('[data-t="' + i + '"]'), t.url);
+        document.querySelector('[data-k="' + i + '"]').textContent = t.clave;
+        document.querySelector('[data-copia="' + i + '"]').addEventListener('click', function () { copia(t.clave, this, 'Copiar clave'); });
+      });
+    }).catch(cerrado);
+  }
+
+  /* confeti */
+  function confeti() {
+    var c = $('confeti'), x = c.getContext('2d'), W = c.width = innerWidth, Hh = c.height = innerHeight, P = [], col = ['#A3E635', '#BEF264', '#F5B83D', '#FFFFFF', '#25D366'];
+    for (var i = 0; i < 140; i++) P.push({ x: W / 2, y: Hh * .35, vx: (Math.random() - .5) * 14, vy: -Math.random() * 14 - 4, s: 4 + Math.random() * 6, c: col[i % col.length], r: Math.random() * 6 });
+    var t = 0; (function f() { x.clearRect(0, 0, W, Hh); P.forEach(function (p) { p.vy += .35; p.x += p.vx; p.y += p.vy; p.r += .1; x.save(); x.translate(p.x, p.y); x.rotate(p.r); x.fillStyle = p.c; x.fillRect(-p.s / 2, -p.s / 2, p.s, p.s * .6); x.restore(); }); if (++t < 150) requestAnimationFrame(f); else x.clearRect(0, 0, W, Hh); })();
+  }
+  try { if (!localStorage.getItem('emx-bienvenida-visto')) { setTimeout(confeti, 500); localStorage.setItem('emx-bienvenida-visto', '1'); } } catch (e) { setTimeout(confeti, 500); }
+})();
+</script>
+</body>
+</html>
