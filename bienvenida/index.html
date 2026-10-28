@@ -102,6 +102,10 @@ main{padding:26px 0 80px;display:grid;gap:30px}
 .clave code{font-family:var(--mono);font-weight:700;font-size:1.05rem;color:var(--marca-2);letter-spacing:.05em}
 .clave button{min-height:40px;padding:8px 12px;border-radius:10px;border:1.5px solid var(--marca);background:transparent;color:var(--marca);font-weight:700;white-space:nowrap}
 .clave button.ok{background:var(--marca);color:var(--marca-ink)}
+.taller-wa{border-color:var(--marca);background:linear-gradient(180deg,rgba(163,230,53,.1),var(--ink-2) 60%)}
+.taller-wa .t i{font-size:.72rem;letter-spacing:.04em}
+.video-wa{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--edge);background:#000;aspect-ratio:16/9;width:100%}
+.video-wa iframe{width:100%;height:100%;border:0;display:block}
 .grupo-t{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ambar);margin-top:4px}
 .dudas{display:grid;gap:10px}
 .duda{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;border:1px solid var(--edge);border-radius:var(--r);padding:12px;background:var(--ink-1)}
@@ -223,16 +227,21 @@ main{padding:26px 0 80px;display:grid;gap:30px}
 
   <!-- PASO 6 -->
   <section class="paso" id="p6" data-paso="6">
-    <div class="cab"><span class="n">6</span><div><small>Paso 6 · 5 horas</small><h2>Mira los 4 talleres</h2></div></div>
-    <p class="mut"><b style="color:var(--txt)">5 horas de dropshipping actualizado.</b> Te sirven si usas el bot y también si vendes manual. Míralos en orden.</p>
-    <div class="ojo"><b>Las claves:</b> cópialas tal cual, con sus símbolos. Usa el botón «Copiar» para no equivocarte.</div>
+    <div class="cab"><span class="n">6</span><div><small>Paso 6 · 4 horas</small><h2>Conecta tu WhatsApp y mira los talleres</h2></div></div>
+    <p class="mut"><b style="color:var(--txt)">Primero conecta tu WhatsApp: ahora son 5 minutos.</b> Ya no hace falta crear una app en Meta ni pegar datos técnicos. Después, 4 horas de dropshipping actualizado, que te sirven si usas el bot y también si vendes manual.</p>
     <p class="grupo-t">Si tienes el bot</p>
+    <div class="taller taller-wa">
+      <div class="t"><i>WA</i><div><h3>Conectar WhatsApp: la forma nueva (5 minutos)</h3><span>Mira el video, ten lista tu tarjeta para Meta y sigue los pasos con sus capturas. Si algo te sale raro, toca «¿Necesitas ayuda?» abajo a la derecha: Pablo te responde con la captura del aviso.</span></div></div>
+      <div class="video-wa"><iframe src="https://www.youtube-nocookie.com/embed/Dj1R6nAp-uY?rel=0" title="Cómo conectar WhatsApp a EmprendeX, paso a paso" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+      <a class="btn" id="guiaWa" href="whatsapp/"><svg aria-hidden="true"><use href="#iir"/></svg>Abrir la guía paso a paso</a>
+      <p class="chica">La guía trae los dos videos (instalar y «si algo falla»), la lista de lo que necesitas y qué hacer con cada aviso de Meta.</p>
+    </div>
+    <div class="ojo"><b>Las claves de los talleres:</b> cópialas tal cual, con sus símbolos. Usa el botón «Copiar» para no equivocarte.</div>
     <div class="taller"><div class="t"><i>1</i><div><h3>Lanzamiento de la plataforma</h3></div></div><div class="clave"><code data-k="0">••••••••</code><button type="button" data-copia="0">Copiar clave</button></div><a class="btn sec" data-t="0" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iir"/></svg>Ver el taller 1</a></div>
-    <div class="taller"><div class="t"><i>2</i><div><h3>Configuración del bot</h3></div></div><div class="clave"><code data-k="1">••••••••</code><button type="button" data-copia="1">Copiar clave</button></div><a class="btn sec" data-t="1" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iir"/></svg>Ver el taller 2</a></div>
     <p class="grupo-t">Para todos (con bot o manual)</p>
-    <div class="taller"><div class="t"><i>3</i><div><h3>Investigar y elegir producto</h3><span>Investigar el mercado, analizar la competencia y buscar videos para testear.</span></div></div><div class="clave"><code data-k="2">••••••••</code><button type="button" data-copia="2">Copiar clave</button></div><a class="btn sec" data-t="2" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iir"/></svg>Ver el taller 3</a></div>
-    <div class="taller"><div class="t"><i>4</i><div><h3>Vender y escalar</h3><span>Cómo funciona Meta hoy, la nueva forma de testear, cómo escalar, conectar Claude para que analice tus campañas, seguimiento automático y tips para evitar devoluciones viendo el historial del cliente.</span></div></div><div class="clave"><code data-k="3">••••••••</code><button type="button" data-copia="3">Copiar clave</button></div><a class="btn sec" data-t="3" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iir"/></svg>Ver el taller 4</a></div>
-    <button class="hecho-btn" type="button">Ya empecé los talleres</button>
+    <div class="taller"><div class="t"><i>2</i><div><h3>Investigar y elegir producto</h3><span>Investigar el mercado, analizar la competencia y buscar videos para testear.</span></div></div><div class="clave"><code data-k="1">••••••••</code><button type="button" data-copia="1">Copiar clave</button></div><a class="btn sec" data-t="1" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iir"/></svg>Ver el taller 2</a></div>
+    <div class="taller"><div class="t"><i>3</i><div><h3>Vender y escalar</h3><span>Cómo funciona Meta hoy, la nueva forma de testear, cómo escalar, conectar Claude para que analice tus campañas, seguimiento automático y tips para evitar devoluciones viendo el historial del cliente.</span></div></div><div class="clave"><code data-k="2">••••••••</code><button type="button" data-copia="2">Copiar clave</button></div><a class="btn sec" data-t="2" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#iir"/></svg>Ver el taller 3</a></div>
+    <button class="hecho-btn" type="button">Ya conecté WhatsApp y empecé los talleres</button>
   </section>
 
   <section class="final" id="final">
@@ -245,7 +254,7 @@ main{padding:26px 0 80px;display:grid;gap:30px}
     <p class="k">¿Tienes dudas?</p>
     <h2>Así resuelves <em>cualquier pregunta</em></h2>
     <div class="dudas">
-      <div class="duda"><i>1</i><div><b>El asistente de la plataforma</b><span>Tu bot asistente te ayuda con las preguntas más complejas.</span></div></div>
+      <div class="duda"><i>1</i><div><b>El botón «¿Necesitas ayuda?»</b><span>Abajo a la derecha está Pablo, el asistente de IA: pregúntale sobre la conexión de WhatsApp o mándale la captura del aviso que te sale. Dentro de la plataforma también te atiende.</span></div></div>
       <div class="duda"><i>2</i><div><b>El grupo VIP</b><span>Si aún no se resuelve, pregúntalo en el grupo: la comunidad te ayuda.</span></div></div>
       <div class="duda"><i>3</i><div><b>Samantha</b><span>Para tu acceso a la plataforma: 0968275952.</span></div></div>
     </div>
@@ -257,7 +266,7 @@ main{padding:26px 0 80px;display:grid;gap:30px}
 (function () {
   'use strict';
   var NUM = '593968275952';
-  var PAYLOAD = {"iv":"CZKJWjqlbN93eRLa","ct":"jO1Eq2VtOlah+0CJr+ySODWQ1NDLOIFpfNKVDXV0+oEA9eNGfY5iGNbygKewgiDm+2qEiRy5WXVXoJwTWlL6BCPSqWUA1xtpKSk7QKKoAJEZBudTzIP5WnQKMfn/BPxqX1c/6Trb02JNUHq4009TAAR5A+VT10ogpYxsniksAIxSXgB7OEvj3FpL37epnByXSjqJ0U1y4ugPYSFq/jM9Q2AgHENhMBD3RwQKq/einVUkvd7T9OidbHPWB5ajrgsRsku6yp/vGVJ1SHGLFF6hs8m9b21BbFDdX1q6JeY9DHY51uoipr21onk1Za+rsJOhPSimbQUIJn+ayTRUPFjprIaBuAkkrKi6Ohweq6h2bmG7Fvij8HeV3IPoLRj6t9d8ORv1csdwUTwBDJU7/qgHvysCps58bEgubcW+z4Qs7xuhfHqp/lIaofbguq2tOJTqt4oFu9SlikejCyuefiV6eJ30yWToV4aEbmcwC50l4Kn2hrIkWBMIwabrO+GxoCMjZIdKXtjclo46HcE+Bd4n+joeJfLWE0+KQWQHAAopN/xbO6nAJNEZ2ub/jB86YkvF5aYK8m7CCeVI2YM27w2sRSwwyE8wnXeR97huh12kYuQjehjg7E8pOQuW2toUy9hN6pTT+f3kTpnvFxziZranFNp0fhJMCaN5tydf4Bn9iQRPpITO44s3yxTYIxYfN+TB+6s6od2afZdJN9/Jf0UAbGbcfJgKq/OaLwODZ/S4VoQiPQ2Tq7NKqxIM5K4jXwjWuFh+hSRBun4PjGK4XOCo0stMXgwFu9ue77GQgZE72p6M2LFSgngKwz0cZKMn3c6wOrxIjYqQ8z/Lsh/G4ZpRfilGOkc/1/7fZlabxipbvYO6T2jIxbYV5hvALH9l97ndEzd3GQsBZO+lbE5C2hW9ZaE/35Eip9Qxp0cxScY6haFp44+Pzuh9MHw+w7/wo6iJasr45Pci4g4ec880/KpR20mO8AOG0BTMloVmgYwoIJpVJO0="};
+  var PAYLOAD = {"iv":"cMYmPEeUD-z567UI","ct":"H9TJK2E2zfIA2TZkdCpQC79WB3d7y2iuEG8/cjEJ/RwqM8eD3RLw8k9/KUoEC7aVFO9EADbI03fX/YrTvAVdhwDJGYTNTTqz968DzfIIeu9MreHJIHWKLMRHxkCB3YR+bKto1UpGKcfHDuTXYBOe7ABSgw0go8Dp77+yrX5TPjlw0p+/pEsIdkSGQ5KNEhIinBCnbb57JSlRBTXqJkh4fM2QVymddMxjMTJaQdqpHusbls6SSN82cvxTHXaWl5CTsRCyzvrJYRbeT322L61jWKltYYjfM6CsIlwha1ILqisZHxetufRmOp+jQalXAOgP5oEYmkr9KhOy5faHQftq23pw4DtKQw+3rPFvTDQT6yaZKqa+JIGFwcZ+ooqKJlzCT8Fkoeknso0mdW+mbCs7XsY43giCiwGF9XpBeNwe4OWwA6MIchPAU/MRiZhqi7cnMN+7/57G0NzkFFb0P+kkw4VFMxZb2UxIznQLlxvOEjpPgJ/aTzoECO5HqVe6ybsJC2vu7tytIiDIhFNaPLrgy8GogcMAbiygonfN3Vc0J/39A8AmFzQrxBTBbwOUJOfLnM5Xj/b/YnX+bIrHK1hazldsH2H3sXiotd5pqHcWlPa/70lxLV93nh+z8yu0ieywyDwWMSzljfQlttvVQj/3Rsnc2ZV2JCiG10eXhx+WtsLQ7NFTx1DxML9mivJK22NKpXhRj80bviZsLndCVkxUmrBuelfWsnY5eY4Cg95i9R22Y+VPBzw3VNuorhArBXJQHsnpUMRywrdOmW2GiwytA3B4AkAK/twYT9IvbvGJNt9+wA=="};
   function $(id) { return document.getElementById(id); }
   function $$(s) { return Array.prototype.slice.call(document.querySelectorAll(s)); }
   $$('[data-wa]').forEach(function (a) { a.href = 'https://wa.me/' + NUM + '?text=' + encodeURIComponent(a.dataset.wa); });
@@ -292,6 +301,9 @@ main{padding:26px 0 80px;display:grid;gap:30px}
     });
   });
   pinta();
+
+  /* la guía de WhatsApp recibe la misma clave del enlace */
+  (function () { var h = location.hash || ''; if (!/k=/.test(h)) { try { var g = localStorage.getItem('emx-bienvenida-k'); if (g) h = '#k=' + g; } catch (e) {} } $('guiaWa').href = 'whatsapp/' + h; })();
 
   /* video */
   $('video').querySelector('button').addEventListener('click', function () {
@@ -347,5 +359,6 @@ main{padding:26px 0 80px;display:grid;gap:30px}
   try { if (!localStorage.getItem('emx-bienvenida-visto')) { setTimeout(confeti, 500); localStorage.setItem('emx-bienvenida-visto', '1'); } } catch (e) { setTimeout(confeti, 500); }
 })();
 </script>
+<script src="ayuda.js" defer></script>
 </body>
 </html>
